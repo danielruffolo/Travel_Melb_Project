@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10D1F9FF1E935D8C0020BFE0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1F9FD1E935D8C0020BFE0 /* BaseViewController.swift */; };
+		10D1FA001E935D8C0020BFE0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1F9FE1E935D8C0020BFE0 /* MenuViewController.swift */; };
+		10D1FA041E935FC60020BFE0 /* PlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1FA031E935FC60020BFE0 /* PlayVC.swift */; };
+		10D1FA061E9360CC0020BFE0 /* TimeTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1FA051E9360CC0020BFE0 /* TimeTableVC.swift */; };
+		10D1FA081E9361640020BFE0 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1FA071E9361640020BFE0 /* SettingsVC.swift */; };
+		10D1FA0A1E9361E20020BFE0 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1FA091E9361E20020BFE0 /* AboutVC.swift */; };
 		79984BE51E8B853400992F79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79984BE41E8B853400992F79 /* AppDelegate.swift */; };
 		79984BE71E8B853400992F79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79984BE61E8B853400992F79 /* ViewController.swift */; };
 		79984BEA1E8B853400992F79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79984BE81E8B853400992F79 /* Main.storyboard */; };
@@ -34,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10D1F9FD1E935D8C0020BFE0 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		10D1F9FE1E935D8C0020BFE0 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		10D1FA031E935FC60020BFE0 /* PlayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVC.swift; sourceTree = "<group>"; };
+		10D1FA051E9360CC0020BFE0 /* TimeTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableVC.swift; sourceTree = "<group>"; };
+		10D1FA071E9361640020BFE0 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		10D1FA091E9361E20020BFE0 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		79984BE11E8B853400992F79 /* Travel_Melb_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travel_Melb_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79984BE41E8B853400992F79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79984BE61E8B853400992F79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,11 +110,17 @@
 			isa = PBXGroup;
 			children = (
 				79984BE41E8B853400992F79 /* AppDelegate.swift */,
+				10D1F9FD1E935D8C0020BFE0 /* BaseViewController.swift */,
+				10D1F9FE1E935D8C0020BFE0 /* MenuViewController.swift */,
 				79984BE61E8B853400992F79 /* ViewController.swift */,
 				79984BE81E8B853400992F79 /* Main.storyboard */,
 				79984BEB1E8B853400992F79 /* Assets.xcassets */,
 				79984BED1E8B853400992F79 /* LaunchScreen.storyboard */,
 				79984BF01E8B853400992F79 /* Info.plist */,
+				10D1FA031E935FC60020BFE0 /* PlayVC.swift */,
+				10D1FA051E9360CC0020BFE0 /* TimeTableVC.swift */,
+				10D1FA071E9361640020BFE0 /* SettingsVC.swift */,
+				10D1FA091E9361E20020BFE0 /* AboutVC.swift */,
 			);
 			path = Travel_Melb_Project;
 			sourceTree = "<group>";
@@ -193,6 +211,7 @@
 				TargetAttributes = {
 					79984BE01E8B853400992F79 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 75474X5NP9;
 						ProvisioningStyle = Automatic;
 					};
 					79984BF41E8B853400992F79 = {
@@ -259,8 +278,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10D1FA061E9360CC0020BFE0 /* TimeTableVC.swift in Sources */,
 				79984BE71E8B853400992F79 /* ViewController.swift in Sources */,
 				79984BE51E8B853400992F79 /* AppDelegate.swift in Sources */,
+				10D1FA041E935FC60020BFE0 /* PlayVC.swift in Sources */,
+				10D1FA0A1E9361E20020BFE0 /* AboutVC.swift in Sources */,
+				10D1F9FF1E935D8C0020BFE0 /* BaseViewController.swift in Sources */,
+				10D1FA001E935D8C0020BFE0 /* MenuViewController.swift in Sources */,
+				10D1FA081E9361640020BFE0 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +437,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 75474X5NP9;
 				INFOPLIST_FILE = Travel_Melb_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "travel-Melb.Travel-Melb-Project";
@@ -424,6 +450,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 75474X5NP9;
 				INFOPLIST_FILE = Travel_Melb_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "travel-Melb.Travel-Melb-Project";
@@ -505,6 +532,7 @@
 				79984C0B1E8B853400992F79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		79984C0C1E8B853400992F79 /* Build configuration list for PBXNativeTarget "Travel_Melb_ProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +541,7 @@
 				79984C0E1E8B853400992F79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		79984C0F1E8B853400992F79 /* Build configuration list for PBXNativeTarget "Travel_Melb_ProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +550,7 @@
 				79984C111E8B853400992F79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
