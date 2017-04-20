@@ -4,6 +4,7 @@
 //
 //  Created by Daniel Ruffolo on 29/3/17.
 //  Copyright © 2017 Travel_Melb_Team. All rights reserved.
+//  https://developers.google.com/maps/documentation/ios-sdk/current-place-tutorial
 //
 
 import UIKit
