@@ -20,7 +20,7 @@
 		79984BEF1E8B853400992F79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79984BED1E8B853400992F79 /* LaunchScreen.storyboard */; };
 		79984BFA1E8B853400992F79 /* Travel_Melb_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79984BF91E8B853400992F79 /* Travel_Melb_ProjectTests.swift */; };
 		79984C051E8B853400992F79 /* Travel_Melb_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79984C041E8B853400992F79 /* Travel_Melb_ProjectUITests.swift */; };
-		AFD092DDCE78C419DE661B47 /* Pods_Travel_Melb_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C4C738A56A5C5AA35A55BF /* Pods_Travel_Melb_Project.framework */; };
+		7F442D7CAD1BE81F79518BE3 /* libPods-Travel_Melb_Project.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A1D01D0F410CFF53DEDC03 /* libPods-Travel_Melb_Project.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,6 @@
 		10D1FA071E9361640020BFE0 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		10D1FA091E9361E20020BFE0 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		2E50677188D281EF8456CE7E /* Pods-Travel_Melb_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel_Melb_Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travel_Melb_Project/Pods-Travel_Melb_Project.release.xcconfig"; sourceTree = "<group>"; };
-		78C4C738A56A5C5AA35A55BF /* Pods_Travel_Melb_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travel_Melb_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79984BE11E8B853400992F79 /* Travel_Melb_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travel_Melb_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79984BE41E8B853400992F79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79984BE61E8B853400992F79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		79984C001E8B853400992F79 /* Travel_Melb_ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Travel_Melb_ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79984C041E8B853400992F79 /* Travel_Melb_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel_Melb_ProjectUITests.swift; sourceTree = "<group>"; };
 		79984C061E8B853400992F79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94A1D01D0F410CFF53DEDC03 /* libPods-Travel_Melb_Project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Travel_Melb_Project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76C7ED9E0EFA8B8C7FBCB74 /* Pods-Travel_Melb_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel_Melb_Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travel_Melb_Project/Pods-Travel_Melb_Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFD092DDCE78C419DE661B47 /* Pods_Travel_Melb_Project.framework in Frameworks */,
+				7F442D7CAD1BE81F79518BE3 /* libPods-Travel_Melb_Project.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +153,7 @@
 		AE1A2A96D15AAF159D29E5A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				78C4C738A56A5C5AA35A55BF /* Pods_Travel_Melb_Project.framework */,
+				94A1D01D0F410CFF53DEDC03 /* libPods-Travel_Melb_Project.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -238,7 +238,6 @@
 				TargetAttributes = {
 					79984BE01E8B853400992F79 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 75474X5NP9;
 						ProvisioningStyle = Automatic;
 					};
 					79984BF41E8B853400992F79 = {
@@ -345,7 +344,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -515,8 +514,9 @@
 			baseConfigurationReference = C76C7ED9E0EFA8B8C7FBCB74 /* Pods-Travel_Melb_Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 75474X5NP9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Travel_Melb_Project/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "travel-Melb.Travel-Melb-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -530,8 +530,9 @@
 			baseConfigurationReference = 2E50677188D281EF8456CE7E /* Pods-Travel_Melb_Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 75474X5NP9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Travel_Melb_Project/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "travel-Melb.Travel-Melb-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";

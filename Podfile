@@ -3,8 +3,11 @@
 
 
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+
+
 source 'https://github.com/CocoaPods/Specs.git'
-  target 'Travel_Melb_Project' do
-  pod 'GoogleMaps'
+target 'Travel_Melb_Project' do
+    pod 'GooglePlaces'
+    pod 'GooglePlacePicker'
+    pod 'GoogleMaps'
 end
