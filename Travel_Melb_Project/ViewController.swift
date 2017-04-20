@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 
 class ViewController: BaseViewController {
@@ -15,19 +16,20 @@ class ViewController: BaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.addSlideMenuButton()
-        //self.navigationController?.navigationBar.backgroundColor = UIColor.clear
-        
-        self.navigationController?.navigationBar.isTranslucent = true;
-        self.navigationController?.view.backgroundColor = UIColor.clear;
-        self.navigationController?.navigationBar.backgroundColor = UIColor.clear;
+ 
         
         
-//        self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-//            forBarMetrics:UIBarMetricsDefault];
-//        self.navigationController.navigationBar.shadowImage = [UIImage new];
-//        self.navigationController.navigationBar.translucent = YES;
-//        self.navigationController.view.backgroundColor = [UIColor clearColor];
-//        self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+        // coordinate -33.86,151.20 at zoom level 6.
+        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        view = mapView
+        
+        // Creates a marker in the center of the map.
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
+        marker.title = "Sydney"
+        marker.snippet = "Australia"
+        marker.map = mapView
     }
 
     override func didReceiveMemoryWarning() {
