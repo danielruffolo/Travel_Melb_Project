@@ -10,12 +10,6 @@ import UIKit
 
 class SettingsVC: BaseViewController {
     
-    
-    override func loadView() {
-        
-    }
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addSlideMenuButton()
