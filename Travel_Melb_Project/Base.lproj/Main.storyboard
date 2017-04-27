@@ -96,7 +96,7 @@
             </objects>
             <point key="canvasLocation" x="2314" y="-564"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController restorationIdentifier="Home" storyboardIdentifier="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="Travel_Melb_Project" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,20 +109,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.37131819849999997" green="0.7177760554" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="LI8-Se-jhb">
-                        <nil key="title"/>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Destination" textAlignment="center" minimumFontSize="17" id="dR7-PK-o6M">
-                            <rect key="frame" x="73" y="7" width="227" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Map View" id="LI8-Se-jhb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912.79999999999995" y="203.74812593703149"/>
+            <point key="canvasLocation" x="914" y="204"/>
         </scene>
         <!--Time TableVC-->
         <scene sceneID="9VR-Hn-Hai">
@@ -135,29 +126,12 @@
                     <view key="view" contentMode="scaleToFill" id="RCv-tA-Ci0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVc-fH-Fg5">
-                                <rect key="frame" x="86" y="73" width="202" height="175"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Bus"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRc-Nw-NDN">
-                                <rect key="frame" x="86" y="266" width="202" height="175"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Tram"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUJ-As-dMw">
-                                <rect key="frame" x="86" y="461" width="202" height="175"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Train"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.51598209142684937" green="0.76453876495361328" blue="0.98042750358581543" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqE-yc-trP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1642" y="204"/>
+            <point key="canvasLocation" x="1652" y="187"/>
         </scene>
         <!--AboutVC-->
         <scene sceneID="0Lj-Pu-3Lz">
@@ -175,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wm-EA-zM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3212" y="-539"/>
+            <point key="canvasLocation" x="2414" y="192"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="srq-VA-WrH">
@@ -193,24 +167,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal">
-                                    <color key="titleColor" red="0.51598209139999995" green="0.76453876499999995" blue="0.98042750359999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="onCloseMenuClick:" destination="ng9-xa-FXn" eventType="touchUpInside" id="Sby-DO-hCQ"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1Vz-3h-4PN">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="315" height="603"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellMenu" id="DX1-gT-wrN">
-                                        <rect key="frame" x="0.0" y="22" width="375" height="54"/>
+                                        <rect key="frame" x="0.0" y="22" width="315" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DX1-gT-wrN" id="gWC-M9-EeZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="315" height="53.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R3m-AU-j72">
@@ -221,7 +193,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DP-zn-4IH">
-                                                    <rect key="frame" x="54" y="16" width="313" height="21"/>
+                                                    <rect key="frame" x="54" y="16" width="253" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="vyt-Bp-umH"/>
                                                     </constraints>
@@ -229,7 +201,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="2DP-zn-4IH" secondAttribute="trailing" constant="8" id="4d0-Ff-wSm"/>
                                                 <constraint firstItem="2DP-zn-4IH" firstAttribute="leading" secondItem="R3m-AU-j72" secondAttribute="trailing" constant="8" id="Ohu-Ry-9aN"/>
@@ -246,14 +217,14 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.96912253758326627" green="0.98284547632631236" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="1Vz-3h-4PN" secondAttribute="bottom" id="5X6-k3-GQY"/>
                             <constraint firstAttribute="trailing" secondItem="7Nc-O7-WPj" secondAttribute="trailing" id="HxI-5C-z7f"/>
                             <constraint firstItem="7Nc-O7-WPj" firstAttribute="top" secondItem="Evd-5y-CMv" secondAttribute="top" id="Iek-hl-Tpv"/>
                             <constraint firstItem="7Nc-O7-WPj" firstAttribute="leading" secondItem="Evd-5y-CMv" secondAttribute="leading" id="OiZ-M0-xbZ"/>
                             <constraint firstItem="1Vz-3h-4PN" firstAttribute="leading" secondItem="Evd-5y-CMv" secondAttribute="leading" id="R3L-tg-ao9"/>
-                            <constraint firstAttribute="trailing" secondItem="1Vz-3h-4PN" secondAttribute="trailing" id="U5Z-gU-vpd"/>
+                            <constraint firstAttribute="trailing" secondItem="1Vz-3h-4PN" secondAttribute="trailing" constant="60" id="U5Z-gU-vpd"/>
                             <constraint firstItem="OEx-eI-Upu" firstAttribute="top" secondItem="7Nc-O7-WPj" secondAttribute="bottom" id="oMw-6g-Yaa"/>
                             <constraint firstItem="1Vz-3h-4PN" firstAttribute="top" secondItem="Evd-5y-CMv" secondAttribute="top" constant="64" id="w8v-YN-NM2"/>
                         </constraints>
@@ -272,7 +243,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CiU-qC-Qqw" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xhy-JW-703">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Xhy-JW-703">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -286,9 +257,4 @@
             <point key="canvasLocation" x="13.6" y="-559.07046476761627"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Bus" width="356" height="356"/>
-        <image name="Train" width="356" height="356"/>
-        <image name="Tram" width="356" height="356"/>
-    </resources>
 </document>

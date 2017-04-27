@@ -13,10 +13,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = UIColor.clear
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
     }
     
     override func didReceiveMemoryWarning() {
@@ -89,12 +86,12 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 30, height: 22), false, 0.0)
         
-        UIColor.blue.setFill()
+        UIColor.black.setFill()
         UIBezierPath(rect: CGRect(x: 0, y: 3, width: 30, height: 1)).fill()
         UIBezierPath(rect: CGRect(x: 0, y: 10, width: 30, height: 1)).fill()
         UIBezierPath(rect: CGRect(x: 0, y: 17, width: 30, height: 1)).fill()
         
-        UIColor.blue.setFill()
+        UIColor.white.setFill()
         UIBezierPath(rect: CGRect(x: 0, y: 4, width: 30, height: 1)).fill()
         UIBezierPath(rect: CGRect(x: 0, y: 11,  width: 30, height: 1)).fill()
         UIBezierPath(rect: CGRect(x: 0, y: 18, width: 30, height: 1)).fill()
@@ -143,7 +140,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         menuVC.view.frame=CGRect(x: 0 - UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
         
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
-            menuVC.view.frame=CGRect(x: 0, y: 0, width: 300, height: UIScreen.main.bounds.size.height);
+            menuVC.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
             sender.isEnabled = true
             }, completion:nil)
     }

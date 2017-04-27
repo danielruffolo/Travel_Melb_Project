@@ -43,10 +43,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         tblMenuOptions.tableFooterView = UIView()
         // Do any additional setup after loading the view.
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = UIColor.clear
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,7 +81,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             self.view.frame = CGRect(x: -UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
             self.view.layoutIfNeeded()
-            self.view.backgroundColor = UIColor.blue
+            self.view.backgroundColor = UIColor.clear
             }, completion: { (finished) -> Void in
                 self.view.removeFromSuperview()
                 self.removeFromParentViewController()
@@ -98,7 +95,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.layoutMargins = UIEdgeInsets.zero
         cell.preservesSuperviewLayoutMargins = false
         cell.backgroundColor = UIColor.clear
-       // cell. = true
         
         let lblTitle : UILabel = cell.contentView.viewWithTag(101) as! UILabel
         let imgIcon : UIImageView = cell.contentView.viewWithTag(100) as! UIImageView
