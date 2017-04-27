@@ -238,7 +238,7 @@
 				TargetAttributes = {
 					79984BE01E8B853400992F79 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 75474X5NP9;
+						DevelopmentTeam = QTLBZ3JVAX;
 						ProvisioningStyle = Automatic;
 					};
 					79984BF41E8B853400992F79 = {
@@ -515,11 +515,11 @@
 			baseConfigurationReference = C76C7ED9E0EFA8B8C7FBCB74 /* Pods-Travel_Melb_Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 75474X5NP9;
+				DEVELOPMENT_TEAM = QTLBZ3JVAX;
 				INFOPLIST_FILE = Travel_Melb_Project/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "travel-Melb.Travel-Melb-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "danielruffolo.Travel-Melb-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -531,11 +531,11 @@
 			baseConfigurationReference = 2E50677188D281EF8456CE7E /* Pods-Travel_Melb_Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 75474X5NP9;
+				DEVELOPMENT_TEAM = QTLBZ3JVAX;
 				INFOPLIST_FILE = Travel_Melb_Project/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "travel-Melb.Travel-Melb-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "danielruffolo.Travel-Melb-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
