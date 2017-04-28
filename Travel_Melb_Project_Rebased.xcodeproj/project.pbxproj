@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9349305C8C59E3DF0D80FD31 /* Pods_Travel_Melb_Project_Rebased.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9436465989B08420C57F4CEE /* Pods_Travel_Melb_Project_Rebased.framework */; };
+		BE37EFFC1EB2FC9D00144550 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37EFFB1EB2FC9D00144550 /* BaseViewController.swift */; };
+		BE37EFFE1EB2FCAE00144550 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37EFFD1EB2FCAE00144550 /* MenuViewController.swift */; };
+		BEDBE3201EB2F8F5005348B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDBE31F1EB2F8F5005348B6 /* AppDelegate.swift */; };
+		BEDBE3221EB2F8F5005348B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDBE3211EB2F8F5005348B6 /* ViewController.swift */; };
+		BEDBE3251EB2F8F5005348B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEDBE3231EB2F8F5005348B6 /* Main.storyboard */; };
+		BEDBE3271EB2F8F5005348B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEDBE3261EB2F8F5005348B6 /* Assets.xcassets */; };
+		BEDBE32A1EB2F8F5005348B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEDBE3281EB2F8F5005348B6 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6281177D7DD59A43995292CE /* Pods-Travel_Melb_Project_Rebased.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel_Melb_Project_Rebased.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travel_Melb_Project_Rebased/Pods-Travel_Melb_Project_Rebased.debug.xcconfig"; sourceTree = "<group>"; };
+		9436465989B08420C57F4CEE /* Pods_Travel_Melb_Project_Rebased.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travel_Melb_Project_Rebased.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE37EFFB1EB2FC9D00144550 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BE37EFFD1EB2FCAE00144550 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		BEDBE31C1EB2F8F5005348B6 /* Travel_Melb_Project_Rebased.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travel_Melb_Project_Rebased.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEDBE31F1EB2F8F5005348B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BEDBE3211EB2F8F5005348B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BEDBE3241EB2F8F5005348B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BEDBE3261EB2F8F5005348B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BEDBE3291EB2F8F5005348B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BEDBE32B1EB2F8F5005348B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF066A26A1A3BCA43AAB074C /* Pods-Travel_Melb_Project_Rebased.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel_Melb_Project_Rebased.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travel_Melb_Project_Rebased/Pods-Travel_Melb_Project_Rebased.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BEDBE3191EB2F8F5005348B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9349305C8C59E3DF0D80FD31 /* Pods_Travel_Melb_Project_Rebased.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BF2711AB8F5932FB7FFE22E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6281177D7DD59A43995292CE /* Pods-Travel_Melb_Project_Rebased.debug.xcconfig */,
+				EF066A26A1A3BCA43AAB074C /* Pods-Travel_Melb_Project_Rebased.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BEDBE3131EB2F8F4005348B6 = {
+			isa = PBXGroup;
+			children = (
+				BEDBE31E1EB2F8F5005348B6 /* Travel_Melb_Project_Rebased */,
+				BEDBE31D1EB2F8F5005348B6 /* Products */,
+				2BF2711AB8F5932FB7FFE22E /* Pods */,
+				F72996C090D6D925FCD80106 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BEDBE31D1EB2F8F5005348B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BEDBE31C1EB2F8F5005348B6 /* Travel_Melb_Project_Rebased.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BEDBE31E1EB2F8F5005348B6 /* Travel_Melb_Project_Rebased */ = {
+			isa = PBXGroup;
+			children = (
+				BE37EFFB1EB2FC9D00144550 /* BaseViewController.swift */,
+				BEDBE31F1EB2F8F5005348B6 /* AppDelegate.swift */,
+				BE37EFFD1EB2FCAE00144550 /* MenuViewController.swift */,
+				BEDBE3211EB2F8F5005348B6 /* ViewController.swift */,
+				BEDBE3231EB2F8F5005348B6 /* Main.storyboard */,
+				BEDBE3261EB2F8F5005348B6 /* Assets.xcassets */,
+				BEDBE3281EB2F8F5005348B6 /* LaunchScreen.storyboard */,
+				BEDBE32B1EB2F8F5005348B6 /* Info.plist */,
+			);
+			path = Travel_Melb_Project_Rebased;
+			sourceTree = "<group>";
+		};
+		F72996C090D6D925FCD80106 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9436465989B08420C57F4CEE /* Pods_Travel_Melb_Project_Rebased.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BEDBE31B1EB2F8F5005348B6 /* Travel_Melb_Project_Rebased */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEDBE32E1EB2F8F5005348B6 /* Build configuration list for PBXNativeTarget "Travel_Melb_Project_Rebased" */;
+			buildPhases = (
+				2D60CD0403051283091B8D8D /* [CP] Check Pods Manifest.lock */,
+				BEDBE3181EB2F8F5005348B6 /* Sources */,
+				BEDBE3191EB2F8F5005348B6 /* Frameworks */,
+				BEDBE31A1EB2F8F5005348B6 /* Resources */,
+				569FB194FCD17B2A539A8DE8 /* [CP] Embed Pods Frameworks */,
+				A24687F43CE5506CBC86569A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Travel_Melb_Project_Rebased;
+			productName = Travel_Melb_Project_Rebased;
+			productReference = BEDBE31C1EB2F8F5005348B6 /* Travel_Melb_Project_Rebased.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BEDBE3141EB2F8F4005348B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = DansMacBook;
+				TargetAttributes = {
+					BEDBE31B1EB2F8F5005348B6 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = QTLBZ3JVAX;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = BEDBE3171EB2F8F4005348B6 /* Build configuration list for PBXProject "Travel_Melb_Project_Rebased" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BEDBE3131EB2F8F4005348B6;
+			productRefGroup = BEDBE31D1EB2F8F5005348B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BEDBE31B1EB2F8F5005348B6 /* Travel_Melb_Project_Rebased */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BEDBE31A1EB2F8F5005348B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEDBE32A1EB2F8F5005348B6 /* LaunchScreen.storyboard in Resources */,
+				BEDBE3271EB2F8F5005348B6 /* Assets.xcassets in Resources */,
+				BEDBE3251EB2F8F5005348B6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D60CD0403051283091B8D8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		569FB194FCD17B2A539A8DE8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Travel_Melb_Project_Rebased/Pods-Travel_Melb_Project_Rebased-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A24687F43CE5506CBC86569A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Travel_Melb_Project_Rebased/Pods-Travel_Melb_Project_Rebased-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BEDBE3181EB2F8F5005348B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEDBE3221EB2F8F5005348B6 /* ViewController.swift in Sources */,
+				BEDBE3201EB2F8F5005348B6 /* AppDelegate.swift in Sources */,
+				BE37EFFC1EB2FC9D00144550 /* BaseViewController.swift in Sources */,
+				BE37EFFE1EB2FCAE00144550 /* MenuViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BEDBE3231EB2F8F5005348B6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEDBE3241EB2F8F5005348B6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BEDBE3281EB2F8F5005348B6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEDBE3291EB2F8F5005348B6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BEDBE32C1EB2F8F5005348B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BEDBE32D1EB2F8F5005348B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BEDBE32F1EB2F8F5005348B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6281177D7DD59A43995292CE /* Pods-Travel_Melb_Project_Rebased.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QTLBZ3JVAX;
+				INFOPLIST_FILE = Travel_Melb_Project_Rebased/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "danielruffolo.Travel-Melb-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BEDBE3301EB2F8F5005348B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF066A26A1A3BCA43AAB074C /* Pods-Travel_Melb_Project_Rebased.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QTLBZ3JVAX;
+				INFOPLIST_FILE = Travel_Melb_Project_Rebased/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "danielruffolo.Travel-Melb-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BEDBE3171EB2F8F4005348B6 /* Build configuration list for PBXProject "Travel_Melb_Project_Rebased" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEDBE32C1EB2F8F5005348B6 /* Debug */,
+				BEDBE32D1EB2F8F5005348B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEDBE32E1EB2F8F5005348B6 /* Build configuration list for PBXNativeTarget "Travel_Melb_Project_Rebased" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEDBE32F1EB2F8F5005348B6 /* Debug */,
+				BEDBE3301EB2F8F5005348B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BEDBE3141EB2F8F4005348B6 /* Project object */;
+}

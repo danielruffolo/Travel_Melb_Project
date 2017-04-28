@@ -4,27 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
+		<key>PXGoogleDirections.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>GooglePlacesAPI.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ObjectMapper.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Travel_Melb_Project.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SwiftyJSON.xcscheme</key>
+		<key>Pods-Travel_Melb_Project_Rebased.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4E413EDDC5788FA2CA6B136B94F3D7DC</key>
+		<key>7E9E3591E6BD73EA4FBBBB160DD0C735</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88ACB4E8E0FCBA6305260D177DE18A26</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B63D642253C422FB048FD766BB557C0F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D82432A8B6F8DD4EE7EF779662BB6361</key>
+		<key>C7030410775BFBF7156F1CD808ADD7C9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
