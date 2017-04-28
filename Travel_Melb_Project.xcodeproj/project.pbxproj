@@ -20,7 +20,7 @@
 		79984BEF1E8B853400992F79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79984BED1E8B853400992F79 /* LaunchScreen.storyboard */; };
 		79984BFA1E8B853400992F79 /* Travel_Melb_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79984BF91E8B853400992F79 /* Travel_Melb_ProjectTests.swift */; };
 		79984C051E8B853400992F79 /* Travel_Melb_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79984C041E8B853400992F79 /* Travel_Melb_ProjectUITests.swift */; };
-		7F442D7CAD1BE81F79518BE3 /* libPods-Travel_Melb_Project.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A1D01D0F410CFF53DEDC03 /* libPods-Travel_Melb_Project.a */; };
+		8705038B1DBB278A2B6B419E /* Pods_Travel_Melb_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C24209A855F38AF83BC1C3 /* Pods_Travel_Melb_Project.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +61,7 @@
 		79984C001E8B853400992F79 /* Travel_Melb_ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Travel_Melb_ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79984C041E8B853400992F79 /* Travel_Melb_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel_Melb_ProjectUITests.swift; sourceTree = "<group>"; };
 		79984C061E8B853400992F79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		94A1D01D0F410CFF53DEDC03 /* libPods-Travel_Melb_Project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Travel_Melb_Project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0C24209A855F38AF83BC1C3 /* Pods_Travel_Melb_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travel_Melb_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76C7ED9E0EFA8B8C7FBCB74 /* Pods-Travel_Melb_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel_Melb_Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travel_Melb_Project/Pods-Travel_Melb_Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F442D7CAD1BE81F79518BE3 /* libPods-Travel_Melb_Project.a in Frameworks */,
+				8705038B1DBB278A2B6B419E /* Pods_Travel_Melb_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +153,7 @@
 		AE1A2A96D15AAF159D29E5A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				94A1D01D0F410CFF53DEDC03 /* libPods-Travel_Melb_Project.a */,
+				A0C24209A855F38AF83BC1C3 /* Pods_Travel_Melb_Project.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -517,12 +517,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QTLBZ3JVAX;
 				INFOPLIST_FILE = Travel_Melb_Project/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "danielruffolo.Travel-Melb-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -533,12 +533,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QTLBZ3JVAX;
 				INFOPLIST_FILE = Travel_Melb_Project/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "danielruffolo.Travel-Melb-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
