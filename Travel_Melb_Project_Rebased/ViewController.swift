@@ -20,12 +20,17 @@ class ViewController: BaseViewController {
     //var placesClient: GMSPlacesClient!
     var zoomLevel: Float = 15.0
     
+    @IBOutlet weak var resultsButton: UIButton!
+    
+    
     let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.addSlideMenuButton()
+        
+        resultsButton.bringSubview(toFront: resultsButton)
         
         // Initialize the location manager.
         locationManager = CLLocationManager()
