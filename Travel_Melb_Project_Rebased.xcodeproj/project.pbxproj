@@ -15,6 +15,8 @@
 		BEDBE3251EB2F8F5005348B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEDBE3231EB2F8F5005348B6 /* Main.storyboard */; };
 		BEDBE3271EB2F8F5005348B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEDBE3261EB2F8F5005348B6 /* Assets.xcassets */; };
 		BEDBE32A1EB2F8F5005348B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEDBE3281EB2F8F5005348B6 /* LaunchScreen.storyboard */; };
+		EB58B22B1EB597CE00F614AA /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58B22A1EB597CE00F614AA /* TimeTableViewController.swift */; };
+		EB58B22D1EB5994C00F614AA /* JourneyPlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58B22C1EB5994C00F614AA /* JourneyPlannerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		BEDBE3261EB2F8F5005348B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEDBE3291EB2F8F5005348B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEDBE32B1EB2F8F5005348B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB58B22A1EB597CE00F614AA /* TimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
+		EB58B22C1EB5994C00F614AA /* JourneyPlannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyPlannerViewController.swift; sourceTree = "<group>"; };
 		EF066A26A1A3BCA43AAB074C /* Pods-Travel_Melb_Project_Rebased.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel_Melb_Project_Rebased.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travel_Melb_Project_Rebased/Pods-Travel_Melb_Project_Rebased.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +86,8 @@
 				BEDBE3261EB2F8F5005348B6 /* Assets.xcassets */,
 				BEDBE3281EB2F8F5005348B6 /* LaunchScreen.storyboard */,
 				BEDBE32B1EB2F8F5005348B6 /* Info.plist */,
+				EB58B22A1EB597CE00F614AA /* TimeTableViewController.swift */,
+				EB58B22C1EB5994C00F614AA /* JourneyPlannerViewController.swift */,
 			);
 			path = Travel_Melb_Project_Rebased;
 			sourceTree = "<group>";
@@ -129,7 +135,7 @@
 				TargetAttributes = {
 					BEDBE31B1EB2F8F5005348B6 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = QTLBZ3JVAX;
+						DevelopmentTeam = 75474X5NP9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -218,10 +224,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB58B22D1EB5994C00F614AA /* JourneyPlannerViewController.swift in Sources */,
 				BEDBE3221EB2F8F5005348B6 /* ViewController.swift in Sources */,
 				BEDBE3201EB2F8F5005348B6 /* AppDelegate.swift in Sources */,
 				BE37EFFC1EB2FC9D00144550 /* BaseViewController.swift in Sources */,
 				BE37EFFE1EB2FCAE00144550 /* MenuViewController.swift in Sources */,
+				EB58B22B1EB597CE00F614AA /* TimeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,11 +355,11 @@
 			baseConfigurationReference = 6281177D7DD59A43995292CE /* Pods-Travel_Melb_Project_Rebased.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QTLBZ3JVAX;
+				DEVELOPMENT_TEAM = 75474X5NP9;
 				INFOPLIST_FILE = Travel_Melb_Project_Rebased/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "danielruffolo.Travel-Melb-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "chris.Travel-Melb-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -362,11 +370,11 @@
 			baseConfigurationReference = EF066A26A1A3BCA43AAB074C /* Pods-Travel_Melb_Project_Rebased.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QTLBZ3JVAX;
+				DEVELOPMENT_TEAM = 75474X5NP9;
 				INFOPLIST_FILE = Travel_Melb_Project_Rebased/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "danielruffolo.Travel-Melb-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "chris.Travel-Melb-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

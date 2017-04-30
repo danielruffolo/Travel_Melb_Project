@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O0T-j2-HgL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O0T-j2-HgL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--PlayVC-->
+        <!--Journey Planner View Controller-->
         <scene sceneID="nrW-Qk-Sxc">
             <objects>
-                <viewController restorationIdentifier="JourneyPlanner" storyboardIdentifier="JourneyPlanner" id="PvN-VK-OXD" customClass="PlayVC" customModule="Travel_Melb_Project_Rebased" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="JourneyPlanner" storyboardIdentifier="JourneyPlanner" id="PvN-VK-OXD" customClass="JourneyPlannerViewController" customModule="Travel_Melb_Project_Rebased" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dsd-ZM-ypy"/>
                         <viewControllerLayoutGuide type="bottom" id="Gbq-Wf-RbY"/>
@@ -124,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="912.79999999999995" y="203.74812593703149"/>
         </scene>
-        <!--Time TableVC-->
+        <!--Time Table View Controller-->
         <scene sceneID="sZ3-8s-WoP">
             <objects>
-                <viewController restorationIdentifier="TimeTable" storyboardIdentifier="TimeTable" id="2Ce-yc-rZD" customClass="TimeTableVC" customModule="Travel_Melb_Project_Rebased" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="TimeTable" storyboardIdentifier="TimeTable" id="2Ce-yc-rZD" customClass="TimeTableViewController" customModule="Travel_Melb_Project_Rebased" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QVE-ti-qqq"/>
                         <viewControllerLayoutGuide type="bottom" id="E0d-c8-crc"/>
@@ -191,7 +191,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvi-is-6QR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.51598209139999995" green="0.76453876499999995" blue="0.98042750359999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.51598209139999995" green="0.76453876499999995" blue="0.98042750359999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -202,7 +202,7 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1Ej-Am-dkF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.51598209139999995" green="0.76453876499999995" blue="0.98042750359999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -229,7 +229,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                            <color key="backgroundColor" red="0.51598209139999995" green="0.76453876499999995" blue="0.98042750359999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstItem="VHV-MW-Wf5" firstAttribute="centerY" secondItem="1av-cd-Cmd" secondAttribute="centerY" id="0Af-KN-djR"/>
                                                 <constraint firstAttribute="trailing" secondItem="h5G-HT-vDm" secondAttribute="trailing" constant="8" id="AUv-CE-g8x"/>
@@ -238,6 +238,7 @@
                                                 <constraint firstItem="h5G-HT-vDm" firstAttribute="centerY" secondItem="1av-cd-Cmd" secondAttribute="centerY" id="gy7-OM-MIR"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.51598209139999995" green="0.76453876499999995" blue="0.98042750359999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -287,8 +288,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bus" width="16" height="16"/>
-        <image name="Train" width="16" height="16"/>
-        <image name="Tram" width="16" height="16"/>
+        <image name="Bus" width="356" height="356"/>
+        <image name="Train" width="356" height="356"/>
+        <image name="Tram" width="356" height="356"/>
     </resources>
 </document>

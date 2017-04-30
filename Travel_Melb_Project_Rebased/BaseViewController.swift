@@ -13,10 +13,12 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -90,14 +92,14 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 30, height: 22), false, 0.0)
         
         UIColor.blue.setFill()
-        UIBezierPath(rect: CGRect(x: 0, y: 3, width: 30, height: 1)).fill()
-        UIBezierPath(rect: CGRect(x: 0, y: 10, width: 30, height: 1)).fill()
-        UIBezierPath(rect: CGRect(x: 0, y: 17, width: 30, height: 1)).fill()
+        UIBezierPath(rect: CGRect(x: 0, y: 3, width: 30, height: 3)).fill()
+        UIBezierPath(rect: CGRect(x: 0, y: 10, width: 30, height: 3)).fill()
+        UIBezierPath(rect: CGRect(x: 0, y: 17, width: 30, height: 3)).fill()
         
         UIColor.blue.setFill()
-        UIBezierPath(rect: CGRect(x: 0, y: 4, width: 30, height: 1)).fill()
-        UIBezierPath(rect: CGRect(x: 0, y: 11,  width: 30, height: 1)).fill()
-        UIBezierPath(rect: CGRect(x: 0, y: 18, width: 30, height: 1)).fill()
+        UIBezierPath(rect: CGRect(x: 0, y: 4, width: 30, height: 3)).fill()
+        UIBezierPath(rect: CGRect(x: 0, y: 11,  width: 30, height: 3)).fill()
+        UIBezierPath(rect: CGRect(x: 0, y: 18, width: 30, height: 3)).fill()
         
         defaultMenuImage = UIGraphicsGetImageFromCurrentImageContext()!
         
