@@ -14,14 +14,16 @@ import GoogleMaps
 
 class ViewController: BaseViewController {
     
+    @IBOutlet weak var mapView: GMSMapView!
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
-    var mapView: GMSMapView!
+    //var mapView: GMSMapView!
     //var placesClient: GMSPlacesClient!
     var zoomLevel: Float = 15.0
     
     @IBOutlet weak var resultsButton: UIButton!
     
+    @IBOutlet weak var buttonTest: UIButton!
     
     let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
     
@@ -29,6 +31,11 @@ class ViewController: BaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.addSlideMenuButton()
+        mapView.delegate = self
+        
+        
+        
+        
         
         resultsButton.bringSubview(toFront: resultsButton)
         
@@ -46,7 +53,7 @@ class ViewController: BaseViewController {
         let camera = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude,
                                               longitude: defaultLocation.coordinate.longitude,
                                               zoom: zoomLevel)
-        mapView = GMSMapView.map(withFrame: view.bounds, camera: camera)
+        //mapView = GMSMapView.map(withFrame: view.bounds, camera: camera)
         mapView.settings.myLocationButton = true
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.isMyLocationEnabled = true
@@ -101,5 +108,8 @@ extension ViewController: CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
         print("Error: \(error)")
 }
+}
+
+extension ViewController: GMSMapViewDelegate {
 }
 
