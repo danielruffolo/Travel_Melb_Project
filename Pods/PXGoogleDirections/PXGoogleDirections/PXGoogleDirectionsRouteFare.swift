@@ -18,6 +18,6 @@ public struct PXGoogleDirectionsRouteFare {
 
 extension PXGoogleDirectionsRouteFare: CustomStringConvertible {
 	public var description: String {
-		return "\(currency) \(value)"
+		return "\(String(describing: currency)) \(String(describing: value))"
 	}
 }

@@ -19,6 +19,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate, UpSlideMenuDelega
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
         
+        
     }
     
     override func didReceiveMemoryWarning() {

@@ -47,6 +47,15 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
+        
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.frame = self.view.frame
+//        gradientLayer.colors = [UIColor.red.cgColor, UIColor.blue.cgColor, UIColor(red: 124/255.5, green: 14/255.5, blue: 54/255.5, alpha: 1.0).cgColor]
+//        //gradientLayer.location = [0.0, 0.5, 1.0]
+//        gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
+//        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0)
+//        self.view.layer.addSublayer(gradientLayer)
+//        
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,7 +63,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+   override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateArrayMenuOptions()
     }
@@ -84,7 +93,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             self.view.frame = CGRect(x: -UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
             self.view.layoutIfNeeded()
-            self.view.backgroundColor = UIColor.blue
+            self.view.backgroundColor = UIColor.clear
             }, completion: { (finished) -> Void in
                 self.view.removeFromSuperview()
                 self.removeFromParentViewController()
@@ -113,6 +122,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let btn = UIButton(type: UIButtonType.custom)
         btn.tag = indexPath.row
         self.onCloseMenuClick(btn)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

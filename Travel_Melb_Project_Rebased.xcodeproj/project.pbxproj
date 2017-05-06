@@ -18,6 +18,7 @@
 		EB58B22B1EB597CE00F614AA /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58B22A1EB597CE00F614AA /* TimeTableViewController.swift */; };
 		EB58B22D1EB5994C00F614AA /* JourneyPlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58B22C1EB5994C00F614AA /* JourneyPlannerViewController.swift */; };
 		EBCBDF331EB611B000CC9150 /* UpMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBDF311EB611B000CC9150 /* UpMenuViewController.swift */; };
+		EBDD39861EBDCA9F00BC9754 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDD39851EBDCA9F00BC9754 /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		EB58B22A1EB597CE00F614AA /* TimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 		EB58B22C1EB5994C00F614AA /* JourneyPlannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyPlannerViewController.swift; sourceTree = "<group>"; };
 		EBCBDF311EB611B000CC9150 /* UpMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpMenuViewController.swift; sourceTree = "<group>"; };
+		EBDD39851EBDCA9F00BC9754 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		EF066A26A1A3BCA43AAB074C /* Pods-Travel_Melb_Project_Rebased.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel_Melb_Project_Rebased.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travel_Melb_Project_Rebased/Pods-Travel_Melb_Project_Rebased.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,8 +91,9 @@
 				BEDBE3281EB2F8F5005348B6 /* LaunchScreen.storyboard */,
 				BEDBE32B1EB2F8F5005348B6 /* Info.plist */,
 				EB58B22A1EB597CE00F614AA /* TimeTableViewController.swift */,
-				EB58B22C1EB5994C00F614AA /* JourneyPlannerViewController.swift */,
 				EBCBDF311EB611B000CC9150 /* UpMenuViewController.swift */,
+				EB58B22C1EB5994C00F614AA /* JourneyPlannerViewController.swift */,
+				EBDD39851EBDCA9F00BC9754 /* ResultsViewController.swift */,
 			);
 			path = Travel_Melb_Project_Rebased;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				BE37EFFE1EB2FCAE00144550 /* MenuViewController.swift in Sources */,
 				EBCBDF331EB611B000CC9150 /* UpMenuViewController.swift in Sources */,
 				EB58B22B1EB597CE00F614AA /* TimeTableViewController.swift in Sources */,
+				EBDD39861EBDCA9F00BC9754 /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,12 +363,15 @@
 			baseConfigurationReference = 6281177D7DD59A43995292CE /* Pods-Travel_Melb_Project_Rebased.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 75474X5NP9;
 				INFOPLIST_FILE = Travel_Melb_Project_Rebased/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "chris.Travel-Melb-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "chris.Travel-Melb";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -374,12 +381,14 @@
 			baseConfigurationReference = EF066A26A1A3BCA43AAB074C /* Pods-Travel_Melb_Project_Rebased.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 75474X5NP9;
 				INFOPLIST_FILE = Travel_Melb_Project_Rebased/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "chris.Travel-Melb-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "chris.Travel-Melb";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
