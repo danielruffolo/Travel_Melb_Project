@@ -10,6 +10,8 @@ import UIKit
 import CoreLocation
 import PXGoogleDirections
 import GoogleMaps
+import GoogleMapsCore
+
 
 class JourneyPlannerViewController: BaseViewController {
 
@@ -39,8 +41,8 @@ class JourneyPlannerViewController: BaseViewController {
         keyboardDoneButtonView.isTranslucent = true
         keyboardDoneButtonView.tintColor = nil
         keyboardDoneButtonView.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(JourneyPlannerViewController.goButtonTouched(_:)))
-        let clearButton = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(JourneyPlannerViewController.goButtonTouched(_:)))
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(JourneyPlannerViewController.doneButtonTouched(_:)))
+        let clearButton = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(JourneyPlannerViewController.clearButtonTouched(_:)))
         keyboardDoneButtonView.setItems([doneButton, clearButton], animated: false)
         startArriveDateField.inputAccessoryView = keyboardDoneButtonView
 
@@ -67,6 +69,17 @@ class JourneyPlannerViewController: BaseViewController {
         }
     }
     
+    @IBAction func fromButton(_ sender: UITextField) {
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+        
+        // Set a filter to return only addresses.
+        let addressFilter = GMSAutocompleteFilter()
+        addressFilter.type = .address
+        autocompleteController.autocompleteFilter = addressFilter
+        
+        present(autocompleteController, animated: true, completion: nil)
+    }
     
     func doneButtonTouched(_ sender: UIBarButtonItem) {
         updateStartArriveDateField((startArriveDateField.inputView as! UIDatePicker).date)
@@ -85,6 +98,7 @@ class JourneyPlannerViewController: BaseViewController {
         directionsAPI.from = PXLocation.namedLocation(startLocation.text!)
         directionsAPI.to = PXLocation.namedLocation(destinationLocation.text!)
         directionsAPI.mode = modeFromField()
+        directionsAPI.alternatives = true
         
         switch timeController.selectedSegmentIndex {
         case 0:
@@ -107,12 +121,7 @@ class JourneyPlannerViewController: BaseViewController {
         default:
             break
         }
-        
-            //directionsAPI.departureTime = nil
-            //directionsAPI.arrivalTime = nil
-        
-        
-        // directionsAPI.region = "fr" // Feature not demonstrated in this sample app
+    
         directionsAPI.calculateDirections { (response) -> Void in
             DispatchQueue.main.async(execute: { () -> Void in
                 switch response {
@@ -140,17 +149,6 @@ class JourneyPlannerViewController: BaseViewController {
         startArriveDateField.isEnabled = true
         startArriveDateField.becomeFirstResponder()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 extension JourneyPlannerViewController: PXGoogleDirectionsDelegate {
@@ -182,3 +180,69 @@ extension JourneyPlannerViewController: PXGoogleDirectionsDelegate {
         }
     }
 }
+
+extension JourneyPlannerViewController: GMSAutocompleteViewControllerDelegate {
+    
+    // Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        // Print place info to the console.
+        print("Place name: \(place.name)")
+        print("Place address: \(place.formattedAddress)")
+        print("Place attributions: \(place.attributions)")
+        
+        // Get the address components.
+        if let addressLines = place.addressComponents {
+            // Populate all of the address fields we can find.
+            for field in addressLines {
+                switch field.type {
+                case kGMSPlaceTypeStreetNumber:
+                    street_number = field.name
+                case kGMSPlaceTypeRoute:
+                    route = field.name
+                case kGMSPlaceTypeNeighborhood:
+                    neighborhood = field.name
+                case kGMSPlaceTypeLocality:
+                    locality = field.name
+                case kGMSPlaceTypeAdministrativeAreaLevel1:
+                    administrative_area_level_1 = field.name
+                case kGMSPlaceTypeCountry:
+                    country = field.name
+                case kGMSPlaceTypePostalCode:
+                    postal_code = field.name
+                case kGMSPlaceTypePostalCodeSuffix:
+                    postal_code_suffix = field.name
+                // Print the items we aren't using.
+                default:
+                    print("Type: \(field.type), Name: \(field.name)")
+                }
+            }
+        }
+        
+        // Call custom function to populate the address form.
+        fillAddressForm()
+        
+        // Close the autocomplete widget.
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // Show the network activity indicator.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    // Hide the network activity indicator.
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
+}
+

@@ -98,15 +98,20 @@ extension ResultsViewController: UITableViewDataSource {
 		}
 		let step = results[routeIndex].legs[indexPath.section].steps[indexPath.row]
 		if let instr = step.rawInstructions {
-			cell!.textLabel!.text = instr
+            let test = String(describing: step.transitDetails?.line?.shortName)
+            let result = test.trimmingCharacters(in: CharacterSet(charactersIn: "01234567890.").inverted)
+            cell!.textLabel?.text = "\(instr),  \(result)"
 		}
 		if let dist = step.distance?.description, let dur = step.duration?.description {
-			cell!.detailTextLabel?.text = "\(dist), \(dur)"
+            let time = String(describing: step.transitDetails?.departureTime?.description)
+            let timex = time.trimmingCharacters(in: CharacterSet(charactersIn: "01234567890:").inverted)
+            
+            cell!.detailTextLabel?.text = "\(dist), \(dur), \(timex)"
 		}
 		return cell!
 	}
 	
-	func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+	func tableView(_ tableView: UITableView, didDeselectRowAt  indexPath: IndexPath) {
 		let step = results[routeIndex].legs[indexPath.section].steps[indexPath.row]
 		mapView.animate(with: GMSCameraUpdate.fit(step.bounds!, withPadding: 40.0))
 	}
