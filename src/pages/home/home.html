@@ -9,11 +9,16 @@
 
 <ion-content>
 
- <ion-card>
+
+
+  <div #map id="map"></div>
+</ion-content>
+<content-drawer [options]="drawerOptions">
+    
+       <ion-card>
         <ion-card-content>
             <div #directionsPanel></div>
         </ion-card-content>
     </ion-card>
-
-  <div #map id="map"></div>
-</ion-content>
+    
+</content-drawer>

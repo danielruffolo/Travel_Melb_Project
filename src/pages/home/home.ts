@@ -12,8 +12,15 @@ export class HomePage {
 @ViewChild('map') mapElement: ElementRef;
 @ViewChild('directionsPanel') directionsPanel: ElementRef;
 map: any;
-
+drawerOptions: any;
   constructor(public navCtrl: NavController, public geolocation: Geolocation) {
+
+    this.drawerOptions = {
+            handleHeight: 50,
+            thresholdFromBottom: 200,
+            thresholdFromTop: 200,
+            bounceBack: true
+        };
 
   }
 
