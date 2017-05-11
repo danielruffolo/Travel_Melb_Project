@@ -24679,4 +24679,5 @@ ion-navbar.toolbar {
   max-height: 200px;
   overflow: scroll;
   position: absolute;
+  z-index: 1;
 }
