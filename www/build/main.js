@@ -55646,24 +55646,31 @@ var HomePage = (function () {
         var _this = this;
         this.geolocation.getCurrentPosition().then(function (position) {
             var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            console.log(position.coords.latitude + " " + position.coords.longitude);
             var mapOptions = {
                 center: latLng,
                 zoom: 15,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             _this.map = new google.maps.Map(_this.mapElement.nativeElement, mapOptions);
+            console.log(_this.map);
+        }, function (err) {
+            console.log(err);
+        });
+        this.addMarker();
+    };
+    HomePage.prototype.addMarker = function () {
+        var _this = this;
+        this.geolocation.getCurrentPosition().then(function (position) {
+            var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            console.log(position.coords.latitude + " " + position.coords.longitude);
             var marker = new google.maps.Marker({
                 map: _this.map,
                 animation: google.maps.Animation.DROP,
-                position: _this.map.getCenter()
+                position: latLng
             });
             var content = "<h4>Information!</h4>";
             _this.addInfoWindow(marker, content);
-            //       (success) => {
-            //     console.log(success);
-            // }
-        }, function (err) {
-            console.log(err);
         });
     };
     HomePage.prototype.addInfoWindow = function (marker, content) {
@@ -55675,50 +55682,47 @@ var HomePage = (function () {
             infoWindow.open(_this.map, marker);
         });
     };
-    HomePage.prototype.addMarker = function () {
-        var marker = new google.maps.Marker({
-            map: this.map,
-            animation: google.maps.Animation.DROP,
-            position: this.map.getCenter()
-        });
-        var content = "<h4>Information!</h4>";
-        this.addInfoWindow(marker, content);
-    };
     HomePage.prototype.startNavigating = function () {
-        var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer;
-        directionsDisplay.setMap(this.map);
-        directionsDisplay.setPanel(this.directionsPanel.nativeElement);
-        directionsService.route({
-            origin: 'Glen Waverley station',
-            destination: 'Flinders Street Station',
-            travelMode: google.maps.TravelMode['TRANSIT']
-        }, function (res, status) {
-            if (status == google.maps.DirectionsStatus.OK) {
-                directionsDisplay.setDirections(res);
-            }
-            else {
-                console.warn(status);
-            }
+        var _this = this;
+        this.geolocation.getCurrentPosition().then(function (position) {
+            var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            console.log(position.coords.latitude + " " + position.coords.longitude);
+            var directionsService = new google.maps.DirectionsService;
+            var directionsDisplay = new google.maps.DirectionsRenderer;
+            directionsDisplay.setMap(_this.map);
+            directionsDisplay.setPanel(_this.directionsPanel.nativeElement);
+            directionsService.route({
+                origin: latLng,
+                destination: 'Melbourne',
+                travelMode: google.maps.TravelMode['TRANSIT']
+            }, function (res, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(res);
+                }
+                else {
+                    console.warn(status);
+                }
+            });
         });
     };
     return HomePage;
 }());
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('map'),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ElementRef */])
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ElementRef */]) === "function" && _a || Object)
 ], HomePage.prototype, "mapElement", void 0);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('directionsPanel'),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ElementRef */])
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ElementRef */]) === "function" && _b || Object)
 ], HomePage.prototype, "directionsPanel", void 0);
 HomePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/dansmacbodansmacbookok/Desktop/Travel_Melb_Project/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n\n\n  <div #map id="map"></div>\n</ion-content>\n<content-drawer [options]="drawerOptions">\n    \n       <ion-card>\n        <ion-card-content>\n            <div #directionsPanel></div>\n        </ion-card-content>\n    </ion-card>\n    \n</content-drawer>'/*ion-inline-end:"/Users/dansmacbodansmacbookok/Desktop/Travel_Melb_Project/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Users/dansmacbodansmacbookok/Desktop/Travel_Melb_Project/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n\n\n  <div #map id="map"></div>\n</ion-content>\n\n<content-drawer [options]="drawerOptions">\n    \n       <ion-card>\n        <ion-card-content>\n            <div #directionsPanel></div>\n        </ion-card-content>\n    </ion-card>\n    \n</content-drawer>'/*ion-inline-end:"/Users/dansmacbodansmacbookok/Desktop/Travel_Melb_Project/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */]])
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _d || Object])
 ], HomePage);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=home.js.map
 
 /***/ }),
@@ -74756,7 +74760,7 @@ __decorate([
 ], ContentDrawer.prototype, "options", void 0);
 ContentDrawer = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'content-drawer',template:/*ion-inline-start:"/Users/dansmacbodansmacbookok/Desktop/Travel_Melb_Project/src/components/content-drawer/content-drawer.html"*/'<ion-content>\n    <ng-content></ng-content>\n</ion-content>'/*ion-inline-end:"/Users/dansmacbodansmacbookok/Desktop/Travel_Melb_Project/src/components/content-drawer/content-drawer.html"*/
+        selector: 'content-drawer',template:/*ion-inline-start:"/Users/dansmacbodansmacbookok/Desktop/Travel_Melb_Project/src/components/content-drawer/content-drawer.html"*/'<ion-content>\n    <ng-content></ng-content>\n     <ion-card>\n        <ion-card-content>\n            <div #directionsPanel></div>\n        </ion-card-content>\n    </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/dansmacbodansmacbookok/Desktop/Travel_Melb_Project/src/components/content-drawer/content-drawer.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ElementRef */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Renderer */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* DomController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */]])
 ], ContentDrawer);
