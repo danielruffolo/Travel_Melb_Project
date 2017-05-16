@@ -11,7 +11,37 @@
 
 
 
-  <div #map id="map"></div>
+<!--  
+    <ion-item>
+      <ion-input (click)="showAddressModal()" [(ngModel)]="address.place" type="text" placeholder="Pick an address"></ion-input>
+    </ion-item>-->
+
+
+
+     <ion-searchbar
+  (click)="showAddressModal()" 
+  [(ngModel)]="address.place"
+  type="text"
+  [showCancelButton]="shouldShowCancel"
+  placeholder="Pick an address">
+
+
+  
+</ion-searchbar>
+
+
+
+ 
+
+
+
+
+
+  <div #map id="map">
+
+  
+
+  </div>
 </ion-content>
 
 <content-drawer [options]="drawerOptions">

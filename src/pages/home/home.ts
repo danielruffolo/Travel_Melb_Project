@@ -1,6 +1,8 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,ModalController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import { AutocompletePage } from './autocomplete';
+
 
 @Component({
   selector: 'page-home',
@@ -15,8 +17,14 @@ export class HomePage {
 
 map: any;
 drawerOptions: any;
+request: any;
+address;
 
-  constructor(public navCtrl: NavController, public geolocation: Geolocation) {
+  constructor(public navCtrl: NavController, public geolocation: Geolocation, private modalCtrl: ModalController) {
+
+    this.address = {
+      place: ''
+    };
 
     this.drawerOptions = {
             handleHeight: 50,
@@ -25,19 +33,33 @@ drawerOptions: any;
             bounceBack: true
         };
 
+        
+
   }
 
   ionViewDidLoad(){
   
 
      this.initMap();
-     this.startNavigating();
-
+      this.addMarker();
+      this.highlightTransit();
+     
 
 
    
 
 
+  }
+
+  showAddressModal () {
+    let modal = this.modalCtrl.create(AutocompletePage);
+    let me = this;
+    modal.onDidDismiss(data => {
+      this.address.place = data;
+      
+      this.startNavigating()
+    });
+    modal.present();
   }
 
   initMap(){
@@ -61,7 +83,7 @@ drawerOptions: any;
       console.log(err);
     });
 
-    this.addMarker();
+   
 
   }
 
@@ -86,8 +108,7 @@ drawerOptions: any;
   
 }
 
-
- addInfoWindow(marker, content) {
+addInfoWindow(marker, content) {
 
     let infoWindow = new google.maps.InfoWindow({
       content: content
@@ -99,9 +120,15 @@ drawerOptions: any;
 
   }
 
+// the following method will se the places api to highlight train, tram and bus stops within the area
+  highlightTransit(){
+    
+  }
+
+   
    startNavigating(){
 
-       this.geolocation.getCurrentPosition().then((position) => {
+   this.geolocation.getCurrentPosition().then((position) => {
 
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
       console.log(position.coords.latitude + " " + position.coords.longitude)
@@ -111,10 +138,14 @@ drawerOptions: any;
  
         directionsDisplay.setMap(this.map);
         directionsDisplay.setPanel(this.directionsPanel.nativeElement);
- 
+   
         directionsService.route({
+
+       
+     
             origin: latLng,
-            destination: 'Melbourne',
+            destination: this.address.place,
+            
             travelMode: google.maps.TravelMode['TRANSIT']
         }, (res, status) => {
  
@@ -130,7 +161,17 @@ drawerOptions: any;
 
 
 }
+ 
+            
+      
+
+     
+
+       
+
+
 }
+
   
  
   

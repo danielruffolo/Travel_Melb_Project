@@ -24692,6 +24692,12 @@ ion-navbar.toolbar {
   z-index: 1;
 }
 
+.ios page-home ion-item, .md page-home ion-item {
+  overflow: scroll;
+  position: absolute;
+  z-index: 1;
+}
+
 .ios page-home content-drawer, .md page-home content-drawer {
   background-color: #34495e !important;
 }

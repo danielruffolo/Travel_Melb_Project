@@ -68,7 +68,7 @@ export class ContentDrawer {
  
       this.domCtrl.write(() => {
         this.renderer.setElementStyle(this.element.nativeElement, 'transition', 'top 0.5s');
-        this.renderer.setElementStyle(this.element.nativeElement, 'top', '50%');
+        this.renderer.setElementStyle(this.element.nativeElement, 'top', '0px');
       });
  
     } else if(((this.platform.height() - newTop) < this.thresholdBottom && ev.additionalEvent === "pandown") || bounceToBottom){
