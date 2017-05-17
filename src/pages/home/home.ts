@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController,ModalController } from 'ionic-angular';
+import { NavController, ModalController, MenuController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { AutocompletePage } from './autocomplete';
 
@@ -20,11 +20,17 @@ drawerOptions: any;
 request: any;
 address;
 
-  constructor(public navCtrl: NavController, public geolocation: Geolocation, private modalCtrl: ModalController) {
+  constructor(public menu: MenuController, public navCtrl: NavController, public geolocation: Geolocation, private modalCtrl: ModalController) {
 
     this.address = {
       place: ''
     };
+
+    menu.enable(true);
+
+  
+
+    
 
     this.drawerOptions = {
             handleHeight: 50,
@@ -32,9 +38,17 @@ address;
             thresholdFromTop: 200,
             bounceBack: true
         };
+  }
 
-        
-
+  openMenu(evt) {
+      if(evt === "main"){
+         this.menu.enable(true, 'menu1');
+         this.menu.enable(false, 'menu2');
+      }else{
+         this.menu.enable(true, 'menu2');
+         this.menu.enable(false, 'menu1');
+      }
+      this.menu.toggle();
   }
 
   ionViewDidLoad(){
@@ -43,11 +57,6 @@ address;
      this.initMap();
       this.addMarker();
       this.highlightTransit();
-     
-
-
-   
-
 
   }
 
