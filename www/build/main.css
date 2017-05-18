@@ -24705,3 +24705,15 @@ ion-navbar.toolbar {
 .ios page-home content-drawer .content, .md page-home content-drawer .content {
   padding: 20px;
 }
+
+.ios page-routelist .center, .md page-routelist .center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.ios page-timetable .center, .md page-timetable .center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

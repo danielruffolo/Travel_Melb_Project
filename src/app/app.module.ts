@@ -8,6 +8,7 @@ import { AboutPage } from '../pages/about/about';
 import { TimetablePage } from '../pages/timetable/timetable';
 import { PlannerPage } from '../pages/planner/planner';
 import { AutocompletePage } from '../pages/home/autocomplete';
+import { RouteList } from '../pages/routelist/routelist';
 
 import { ContentDrawer } from '../components/content-drawer/content-drawer';
 
@@ -31,7 +32,7 @@ import { HttpModule } from '@angular/http';
     TimetablePage,
     PlannerPage,
     AutocompletePage,
-    
+    RouteList,
     ContentDrawer
   ],
  
@@ -43,7 +44,8 @@ import { HttpModule } from '@angular/http';
     PlannerPage,
     AboutPage,
     AutocompletePage,
-    ContentDrawer
+    ContentDrawer,
+    RouteList
   ],
   providers: [
     StatusBar,
