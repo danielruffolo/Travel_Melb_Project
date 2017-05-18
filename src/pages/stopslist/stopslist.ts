@@ -4,14 +4,14 @@ import 'rxjs/add/operator/map';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 //import {HttpProvider} from '../../providers/http-provider';
 import PvtApi from '../../PtvApiService';
-import { StopList } from '../pages/stopslist/stopslist';
+
 
 @Component({
-  selector: 'page-routelist',
-  templateUrl: 'routelist.html'
+  selector: 'page-stoplist',
+  templateUrl: 'stoplist.html'
 })
 
-export class RouteList {
+export class StopList {
 
   routeData: any;
   loading: any;
@@ -24,18 +24,22 @@ export class RouteList {
       content: `
       <ion-spinner ></ion-spinner>`
     });
+
   }
 
   getJsonData(){
     var test = this.navParams.get('url');
       return this.http.get(test).map(res => res.json());
     }
+  
 
   getdata(){
     //this.loading.present();
     this.getJsonData().subscribe(
       result => {
         this.routeData=result.routes;
+        
+        console.log("Success : "+this.routeData);
       },
       err =>{
         console.error("Error : "+err);
@@ -47,16 +51,13 @@ export class RouteList {
     );
   }
 
-  // http://timetableapi.ptv.vic.gov.au/v3/stops/route/1/route_type/0?devid=3000198&signature=9E3A4197F534E8F3A3F484F882CE7990F2C0BFD6
-
-clickedRouteBus() {
-    let route = this.ptvApi.getStopsUrl(1, 0);
+  clickedRouteTrain() {
+    let route = this.ptvApi.getRoutesUrl(0);
     let data = {
       url: route,
       title: 'test'
     };
-
-    this.navCtrl.push(StopList, data);
+    //this.navCtrl.push(data);
   }
 
 
