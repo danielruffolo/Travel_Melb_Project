@@ -2,10 +2,10 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, ModalController, MenuController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { AutocompletePage } from './autocomplete';
-
-
+import PvtApi, { Stop } from '../../PtvApiService';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { DeparturesList } from '../departuresList/departuresList';
 
 
 @Component({
@@ -14,91 +14,91 @@ import 'rxjs/add/operator/map';
 })
 
 export class HomePage {
+  @ViewChild('map') mapElement: ElementRef;
+  @ViewChild('directionsPanel') directionsPanel: ElementRef;
 
+  map: google.maps.Map;
+  drawerOptions: any;
+  request: any;
+  address;
+  nearbyStops: Stop[];
+  ptvApi = new PvtApi();
+  position: Coordinates | null = null;
 
-@ViewChild('map') mapElement: ElementRef;
-@ViewChild('directionsPanel') directionsPanel: ElementRef;
-
-map: any;
-drawerOptions: any;
-request: any;
-address;
-data2: any;
-
-
-  constructor(public menu: MenuController, 
-              public navCtrl: NavController,
-               public geolocation: Geolocation,
-                private modalCtrl: ModalController,
-                public http: Http
-                
-                ) {
-
+  constructor(public menu: MenuController,
+    public navCtrl: NavController,
+    public geolocation: Geolocation,
+    private modalCtrl: ModalController,
+    public http: Http) {
     this.address = {
       place: ''
     };
 
     menu.enable(true);
 
-  
-
-    
-
     this.drawerOptions = {
-            handleHeight: 50,
-            thresholdFromBottom: 200,
-            thresholdFromTop: 200,
-            bounceBack: true
-        };
+      handleHeight: 50,
+      thresholdFromBottom: 200,
+      thresholdFromTop: 200,
+      bounceBack: true
+    };
   }
 
   openMenu(evt) {
-      if(evt === "main"){
-         this.menu.enable(true, 'menu1');
-         this.menu.enable(false, 'menu2');
-      }else{
-         this.menu.enable(true, 'menu2');
-         this.menu.enable(false, 'menu1');
-      }
-      this.menu.toggle();
+    if (evt === "main") {
+      this.menu.enable(true, 'menu1');
+      this.menu.enable(false, 'menu2');
+    } else {
+      this.menu.enable(true, 'menu2');
+      this.menu.enable(false, 'menu1');
+    }
+    this.menu.toggle();
   }
 
-  ionViewDidLoad(){
-  
+  ionViewDidLoad() {
+    this.initMap();
+    this.updateMap();
 
+    setInterval(() => {
       this.initMap();
-      this.addMarker();
-      this.getMarkers();
-     
+      this.updateMap();
+    }, 2 * 60 * 1000);
   }
 
-  showAddressModal () {
+  updateMap() {
+    this.geolocation.getCurrentPosition()
+      .then((position) => {
+        this.position = position.coords;
+        this.getMarkers(this.position.latitude, this.position.longitude);
+      });
+  }
+
+  showAddressModal() {
     let modal = this.modalCtrl.create(AutocompletePage);
-    let me = this;
     modal.onDidDismiss(data => {
       this.address.place = data;
-      
+
       this.startNavigating()
     });
     modal.present();
   }
 
-  getMarkers() {
-  this.http.get('http://timetableapi.ptv.vic.gov.au/v3/stops/location/-37.8452691,145.1107945?max_distance=500&devid=3000198&signature=C1CD8BA21B09B6145810901F804BE8A0D9295174')
-  .map((res) => res.json())
-  .subscribe(data => {
-    this.data2 = data.stops;
-    this.addMarkersToMap(this.data2);
+  getMarkers(lat: number, long: number) {
+    const url = this.ptvApi.getNearStopsUrl(lat, long);
+    this.http.get(url)
+      .map((res) => res.json())
+      .subscribe(data => {
+        this.nearbyStops = data.stops;
+        this.addMarkersToMap(this.nearbyStops);
+      });
+  }
 
-  });
-}
+  addMarkersToMap(stops: Stop[]) {
 
-addMarkersToMap(data2) {
-
-    for(let stops of data2) {
-      var position = new google.maps.LatLng(stops.stop_latitude, stops.stop_longitude);
-      var title = stops.stop_name;
-      var type = stops.route_type;
+    for (let stop of stops) {
+      var position = new google.maps.LatLng(stop.stop_latitude, stop.stop_longitude);
+      var title = stop.stop_name;
+      var type = stop.route_type;
 
       var train = "../../assets/img/mini_tram.png";
       var tram = "../../assets/img/mini_tram.png";
@@ -110,48 +110,38 @@ addMarkersToMap(data2) {
       if (type = 0) {
         icon_url = train;
       }
-      else if (type = 1){
+      else if (type = 1) {
         icon_url = tram;
 
       }
-       else if (type = 2){
-         icon_url = bus;
-        
+      else if (type = 2) {
+        icon_url = bus;
       }
 
-      
+      var stopMarker = new google.maps.Marker({
+        position: position,
+        title: title,
+        icon: {
+          url: icon_url
+        },
+        clickable: true,
+        map: this.map
+      });
 
-      var closestopMarkers = new google.maps.Marker(
+      google.maps.event.addListener(stopMarker, 'click', () => {
+        this.navCtrl.push(DeparturesList, {
+          url: this.ptvApi.getDeparturesUrl(stop.route_type, stop.stop_id)
+        })
+      });
+    }
 
-        {
-          position: position, 
-          title: title,
+  }
 
-          
+  initMap() {
 
-          icon:{ 
-            url : icon_url,
-     
-        
-            },
-
-        });
-
-      closestopMarkers.setMap(this.map);
-
-      
-
-
-}
-
-}
-
-  initMap(){
-
- this.geolocation.getCurrentPosition().then((position) => {
+    this.geolocation.getCurrentPosition().then((position) => {
 
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      console.log(position.coords.latitude + " " + position.coords.longitude)
 
       let mapOptions = {
         center: latLng,
@@ -160,41 +150,28 @@ addMarkersToMap(data2) {
       }
 
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-        
-
-      console.log(this.map);
+      this.addMarker(latLng);
 
     }, (err) => {
       console.log(err);
     });
 
-       this.addMarker();
-
-
   }
 
-  addMarker(){
+  addMarker(latLng: google.maps.LatLng) {
+    let marker = new google.maps.Marker({
+      map: this.map,
+      animation: google.maps.Animation.DROP,
+      position: latLng
 
-    this.geolocation.getCurrentPosition().then((position) => {
+    });
 
-      let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      console.log(position.coords.latitude + " " + position.coords.longitude)
- 
-  let marker = new google.maps.Marker({
-    map: this.map,
-    animation: google.maps.Animation.DROP,
-    position: latLng
-  
-  });
- 
-  let content = "<h4>Information!</h4>";          
- 
-  this.addInfoWindow(marker, content);
-    })
-  
-}
+    let content = "<h4>Information!</h4>";
 
-addInfoWindow(marker, content) {
+    this.addInfoWindow(marker, content);
+  }
+
+  addInfoWindow(marker: google.maps.Marker, content) {
 
     let infoWindow = new google.maps.InfoWindow({
       content: content
@@ -205,56 +182,37 @@ addInfoWindow(marker, content) {
     });
 
   }
+  startNavigating() {
 
-
-
-   
-   startNavigating(){
-
-   this.geolocation.getCurrentPosition().then((position) => {
+    this.geolocation.getCurrentPosition().then((position) => {
 
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
       console.log(position.coords.latitude + " " + position.coords.longitude)
- 
-        let directionsService = new google.maps.DirectionsService;
-        let directionsDisplay = new google.maps.DirectionsRenderer;
- 
-        directionsDisplay.setMap(this.map);
-        directionsDisplay.setPanel(this.directionsPanel.nativeElement);
-   
-        directionsService.route({
 
-       
-     
-            origin: latLng,
-            destination: this.address.place,
-            
-            travelMode: google.maps.TravelMode['TRANSIT']
-        }, (res, status) => {
- 
-            if(status == google.maps.DirectionsStatus.OK){
-                directionsDisplay.setDirections(res);
-            } else {
-                console.warn(status);
-            }
- 
-        });
- 
+      let directionsService = new google.maps.DirectionsService;
+      let directionsDisplay = new google.maps.DirectionsRenderer;
+
+      directionsDisplay.setMap(this.map);
+      directionsDisplay.setPanel(this.directionsPanel.nativeElement);
+
+      directionsService.route({
+
+
+
+        origin: latLng,
+        destination: this.address.place,
+
+        travelMode: google.maps.TravelMode['TRANSIT']
+      }, (res, status) => {
+
+        if (status == google.maps.DirectionsStatus.OK) {
+          directionsDisplay.setDirections(res);
+        } else {
+          console.warn(status);
+        }
+
+      });
+
     })
-
-
+  }
 }
- 
-            
-      
-
-     
-
-       
-
-
-}
-
-  
- 
-  

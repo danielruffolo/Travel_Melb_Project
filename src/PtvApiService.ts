@@ -1,4 +1,5 @@
 import * as CryptoJS from "crypto-js";
+import { HomePage } from '../pages/home/home';
 
 export default class PtvApi {
     key = "3cbdb7ca-b9db-4fc6-9d47-8b7e1900792a"
@@ -28,6 +29,12 @@ export default class PtvApi {
 
     getDeparturesUrl(routeType: number, stopId: number) {
         let endpoint = `departures/route_type/${routeType}/stop/${stopId}?`
+        return this.getUrl(endpoint);
+    }
+
+
+     getNearStopsUrl(lat: number, long: number) {
+        let endpoint = `stops/location/${lat},${long}/?max_distance=800&`
         return this.getUrl(endpoint);
     }
 }
