@@ -3,66 +3,61 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 //import {HttpProvider} from '../../providers/http-provider';
-import PvtApi from '../../PtvApiService';
+import PvtApi, { Stop } from '../../PtvApiService';
+import { DeparturesList } from '../departuresList/departuresList';
 
 
 @Component({
-  selector: 'page-stoplist',
-  templateUrl: 'stoplist.html'
+  selector: 'page-stopslist',
+  templateUrl: 'stopslist.html'
 })
 
-export class StopList {
+export class StopsList {
 
-  routeData: any;
+  stops: Stop[];
   loading: any;
   ptvApi = new PvtApi();
 
-  constructor(public navCtrl: NavController,public navParams: NavParams, public loadingCtrl: LoadingController, private http: Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, private http: Http) {
     this.getJsonData();
     this.getdata();
-        this.loading = this.loadingCtrl.create({
+    this.loading = this.loadingCtrl.create({
       content: `
-      <ion-spinner ></ion-spinner>`
+      <ion-spinner></ion-spinner>`
     });
 
   }
 
-  getJsonData(){
+  getJsonData() {
     var test = this.navParams.get('url');
-      return this.http.get(test).map(res => res.json());
-    }
-  
+    return this.http.get(test).map(res => res.json());
+  }
 
-  getdata(){
+  getdata() {
     //this.loading.present();
     this.getJsonData().subscribe(
       result => {
-        this.routeData=result.routes;
-        
-        console.log("Success : "+this.routeData);
+        this.stops = result.stops;
+        this.stops = this.stops.sort((a, b) => a.stop_id - b.stop_id);
       },
-      err =>{
-        console.error("Error : "+err);
-      } ,
+      err => {
+        console.error("Error : " + err);
+      },
       () => {
         this.loading.dismiss();
-        console.log('getData completed');
       }
     );
   }
 
-  clickedRouteTrain() {
-    let route = this.ptvApi.getRoutesUrl(0);
-    let data = {
-      url: route,
-      title: 'test'
-    };
-    //this.navCtrl.push(data);
+  clickedStop(stop: Stop) {
+    let departuresUrl = this.ptvApi.getDeparturesUrl(stop.route_type, stop.stop_id);
+
+    this.navCtrl.push(DeparturesList, {
+      title: "test",
+      url: departuresUrl
+    });
   }
-
-
-  
 }
-  
- 
-  
+
+
+

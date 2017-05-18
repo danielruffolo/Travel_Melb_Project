@@ -20,9 +20,42 @@ export default class PtvApi {
         let endpoint = `routes?route_types=${type}&`;
         return this.getUrl(endpoint);
     }
+
     getStopsUrl(route: number, routeType: number): string {
         let endpoint = `stops/route/${route}/route_type/${routeType}?`;
         return this.getUrl(endpoint);
     }
 
+    getDeparturesUrl(routeType: number, stopId: number) {
+        let endpoint = `departures/route_type/${routeType}/stop/${stopId}?`
+        return this.getUrl(endpoint);
+    }
+}
+
+export interface Route {
+    route_type: number,
+    route_id: number,
+    route_name: string,
+    route_number: string
+}
+
+export interface Stop {
+    stop_name: string,
+    stop_id: number,
+    route_type: number,
+    stop_latitude: number,
+    stop_longitude: number
+}
+
+export interface Departure {
+    stop_id: number,
+    route_id: number,
+    run_id: number,
+    direction_id: number,
+    disruption_ids: number[],
+    scheduled_departure_utc: string,
+    estimated_departure_utc: string,
+    at_platofmr: boolean,
+    platform_number: string,
+    flags: string
 }

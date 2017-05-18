@@ -3,29 +3,23 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Routes</ion-title>
+    <ion-title>Stops</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
-  <ion-card-header>
-    Travel Melb Mobile app
-  </ion-card-header>
-  <ion-card-content>
-    <p>information about the app goes here</p>
-  </ion-card-content>
-</ion-card>
+    <ion-card-header>
+      Travel Melb Mobile app
+    </ion-card-header>
+    <ion-card-content>
+      <p>information about the app goes here</p>
+    </ion-card-content>
+  </ion-card>
 
-<ion-list>
-    <ion-item text-wrap *ngFor="let item of routeData">
-      <!--<button (click)="clickedRoute(item.route_id)">-->
-      <p >{{item.route_number}}  {{item.route_name}}</p>
-      <!--</button>-->
+  <ion-list>
+    <ion-item text-wrap *ngFor="let stop of stops" (click)="clickedStop(stop)">
+        <p>{{stop.stop_name}}</p>
     </ion-item>
   </ion-list>
-
-  
-
 </ion-content>
-

@@ -24675,6 +24675,12 @@ ion-navbar.toolbar {
   box-shadow: 0px -4px 22px -8px rgba(0, 0, 0, 0.75);
 }
 
+.ios page-departuresList .center, .md page-departuresList .center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 .ios page-home .scroll, .md page-home .scroll {
   height: 100%;
 }
@@ -24707,6 +24713,12 @@ ion-navbar.toolbar {
 }
 
 .ios page-routelist .center, .md page-routelist .center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.ios page-stopslist .center, .md page-stopslist .center {
   margin-left: auto;
   margin-right: auto;
   display: block;

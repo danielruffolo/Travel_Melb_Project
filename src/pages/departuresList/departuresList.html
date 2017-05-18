@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Stops</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Travel Melb Mobile app
+    </ion-card-header>
+    <ion-card-content>
+      <p>information about the app goes here</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item text-wrap *ngFor="let departure of departures">
+        <p>{{ departure.scheduled_departure_utc | date : 'short' : '+1000' }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

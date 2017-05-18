@@ -9,7 +9,8 @@ import { TimetablePage } from '../pages/timetable/timetable';
 import { PlannerPage } from '../pages/planner/planner';
 import { AutocompletePage } from '../pages/home/autocomplete';
 import { RouteList } from '../pages/routelist/routelist';
-import { StopList } from '../pages/stopslist/stopslist';
+import { StopsList } from '../pages/stopslist/stopslist';
+import { DeparturesList } from '../pages/departuresList/departuresList';
 
 import { ContentDrawer } from '../components/content-drawer/content-drawer';
 
@@ -35,7 +36,8 @@ import { HttpModule } from '@angular/http';
     AutocompletePage,
     RouteList,
     ContentDrawer,
-    StopList
+    StopsList,
+    DeparturesList
   ],
  
   bootstrap: [IonicApp],
@@ -48,7 +50,8 @@ import { HttpModule } from '@angular/http';
     AutocompletePage,
     ContentDrawer,
     RouteList,
-    StopList
+    StopsList,
+    DeparturesList
   ],
   providers: [
     StatusBar,

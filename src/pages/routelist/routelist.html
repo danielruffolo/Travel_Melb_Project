@@ -9,26 +9,20 @@
 
 <ion-content>
   <ion-card>
-  <ion-card-header>
-    Travel Melb Mobile app
-  </ion-card-header>
-  <ion-card-content>
-    <p>information about the app goes here</p>
-  </ion-card-content>
-</ion-card>
+    <ion-card-header>
+      Travel Melb Mobile app
+    </ion-card-header>
+    <ion-card-content>
+      <p>information about the app goes here</p>
+    </ion-card-content>
+  </ion-card>
 
-<ion-list>
-  
-    <ion-item text-wrap *ngFor="let item of routeData">
-      <button (click)="clickedRouteBus(item.route_id)">
-      <!--<button (click)="clickedRoute(item.route_id)">-->
-      <p >{{item.stop_name}}</p>
-      <!--</button>-->
-      </button>
+  <ion-list>
+    <ion-item text-wrap *ngFor="let route of routes" (click)="clickedRoute(route)">
+        <p> {{route.route_name}}</p>
     </ion-item>
   </ion-list>
 
-  
+
 
 </ion-content>
-

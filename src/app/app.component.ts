@@ -17,7 +17,7 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -27,8 +27,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'About', component: AboutPage },
       { title: 'Timetable', component: TimetablePage },
-            { title: 'Journey Planner', component: PlannerPage }
-     
+      { title: 'Journey Planner', component: PlannerPage }
+
     ];
 
   }
