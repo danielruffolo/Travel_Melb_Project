@@ -4,6 +4,10 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { AutocompletePage } from './autocomplete';
 
 
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -19,8 +23,16 @@ map: any;
 drawerOptions: any;
 request: any;
 address;
+data2: any;
 
-  constructor(public menu: MenuController, public navCtrl: NavController, public geolocation: Geolocation, private modalCtrl: ModalController) {
+
+  constructor(public menu: MenuController, 
+              public navCtrl: NavController,
+               public geolocation: Geolocation,
+                private modalCtrl: ModalController,
+                public http: Http
+                
+                ) {
 
     this.address = {
       place: ''
@@ -55,9 +67,8 @@ address;
   
 
      this.initMap();
-      this.addMarker();
-      this.highlightTransit();
-
+      this.getMarkers();
+     
   }
 
   showAddressModal () {
@@ -70,6 +81,29 @@ address;
     });
     modal.present();
   }
+
+  getMarkers() {
+  this.http.get('http://timetableapi.ptv.vic.gov.au/v3/stops/location/-37.8452691,145.1107945?max_distance=500&devid=3000198&signature=C1CD8BA21B09B6145810901F804BE8A0D9295174')
+  .map((res) => res.json())
+  .subscribe(data => {
+    this.data2 = data.stops;
+    this.addMarkersToMap(this.data2);
+
+  });
+}
+
+addMarkersToMap(data2) {
+
+    for(let stops of data2) {
+      var position = new google.maps.LatLng(stops.stop_latitude, stops.stop_longitude);
+      var title = stops.stop_name;
+      var dogwalkMarker = new google.maps.Marker({position: position, title: title});
+      dogwalkMarker.setMap(this.map);
+
+
+}
+
+}
 
   initMap(){
 
@@ -85,6 +119,7 @@ address;
       }
 
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+        
 
       console.log(this.map);
 
@@ -92,7 +127,8 @@ address;
       console.log(err);
     });
 
-   
+       this.addMarker();
+
 
   }
 
@@ -129,10 +165,7 @@ addInfoWindow(marker, content) {
 
   }
 
-// the following method will se the places api to highlight train, tram and bus stops within the area
-  highlightTransit(){
-    
-  }
+
 
    
    startNavigating(){

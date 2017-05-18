@@ -15,7 +15,15 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { HttpModule } from '@angular/http';
+
 @NgModule({
+
+   imports: [ HttpModule,
+    BrowserModule,
+    IonicModule.forRoot(MyApp)
+  ],
+  
   declarations: [
     MyApp,
     HomePage,
@@ -26,15 +34,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     
     ContentDrawer
   ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
-
-
-
-    
-  
-  ],
+ 
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -49,6 +49,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     Geolocation,
+ 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 
