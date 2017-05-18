@@ -55898,6 +55898,7 @@ var HomePage = (function () {
     };
     HomePage.prototype.ionViewDidLoad = function () {
         this.initMap();
+        this.addMarker();
         this.getMarkers();
     };
     HomePage.prototype.showAddressModal = function () {
@@ -55924,8 +55925,29 @@ var HomePage = (function () {
             var stops = data2_1[_i];
             var position = new google.maps.LatLng(stops.stop_latitude, stops.stop_longitude);
             var title = stops.stop_name;
-            var dogwalkMarker = new google.maps.Marker({ position: position, title: title });
-            dogwalkMarker.setMap(this.map);
+            var type = stops.route_type;
+            var train = "../../assets/img/mini_tram.png";
+            var tram = "../../assets/img/mini_tram.png";
+            var bus = "../../assets/img/mini_tram.png";
+            var icon_url;
+            // detect icon
+            if (type = 0) {
+                icon_url = train;
+            }
+            else if (type = 1) {
+                icon_url = tram;
+            }
+            else if (type = 2) {
+                icon_url = bus;
+            }
+            var closestopMarkers = new google.maps.Marker({
+                position: position,
+                title: title,
+                icon: {
+                    url: icon_url,
+                },
+            });
+            closestopMarkers.setMap(this.map);
         }
     };
     HomePage.prototype.initMap = function () {
@@ -55995,20 +56017,23 @@ var HomePage = (function () {
 }());
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('map'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ElementRef */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ElementRef */])
 ], HomePage.prototype, "mapElement", void 0);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('directionsPanel'),
-    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ElementRef */]) === "function" && _b || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ElementRef */])
 ], HomePage.prototype, "directionsPanel", void 0);
 HomePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'page-home',template:/*ion-inline-start:"/Users/dansmacbodansmacbookok/Desktop/Travel_Melb_Project/src/pages/home/home.html"*/'<ion-header>\n  <ion-toolbar>\n    <ion-buttons left>\n        <button ion-button icon-only (click)="openMenu(\'main\')">\n            <ion-icon name="menu"></ion-icon>\n        </button>\n    </ion-buttons>\n    <ion-title>Home</ion-title>\n    <ion-buttons end>\n        <button ion-button icon-only (click)="openMenu(\'user\')">\n            <ion-icon name="options"></ion-icon>\n        </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n\n\n<!--  \n    <ion-item>\n      <ion-input (click)="showAddressModal()" [(ngModel)]="address.place" type="text" placeholder="Pick an address"></ion-input>\n    </ion-item>-->\n\n\n\n  <button ion-button (click)="getMarkers()"  color="secondary">Secondary</button>\n     <ion-searchbar\n  (click)="showAddressModal()" \n  [(ngModel)]="address.place"\n  type="text"\n  [showCancelButton]="shouldShowCancel"\n  placeholder="Pick an address">\n\n\n  \n</ion-searchbar>\n\n\n\n \n\n\n\n\n\n  <div #map id="map">\n\n  \n\n  </div>\n\n</ion-content>\n\n\n\n\n<content-drawer [options]="drawerOptions">\n    \n       <ion-card>\n        <ion-card-content>\n            <div #directionsPanel></div>\n        </ion-card-content>\n    </ion-card>\n    \n</content-drawer>'/*ion-inline-end:"/Users/dansmacbodansmacbookok/Desktop/Travel_Melb_Project/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]) === "function" && _g || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */],
+        __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]])
 ], HomePage);
 
-var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=home.js.map
 
 /***/ }),

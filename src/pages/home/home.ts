@@ -66,7 +66,8 @@ data2: any;
   ionViewDidLoad(){
   
 
-     this.initMap();
+      this.initMap();
+      this.addMarker();
       this.getMarkers();
      
   }
@@ -97,8 +98,48 @@ addMarkersToMap(data2) {
     for(let stops of data2) {
       var position = new google.maps.LatLng(stops.stop_latitude, stops.stop_longitude);
       var title = stops.stop_name;
-      var dogwalkMarker = new google.maps.Marker({position: position, title: title});
-      dogwalkMarker.setMap(this.map);
+      var type = stops.route_type;
+
+      var train = "../../assets/img/mini_tram.png";
+      var tram = "../../assets/img/mini_tram.png";
+      var bus = "../../assets/img/mini_tram.png";
+      var icon_url;
+
+      // detect icon
+
+      if (type = 0) {
+        icon_url = train;
+      }
+      else if (type = 1){
+        icon_url = tram;
+
+      }
+       else if (type = 2){
+         icon_url = bus;
+        
+      }
+
+      
+
+      var closestopMarkers = new google.maps.Marker(
+
+        {
+          position: position, 
+          title: title,
+
+          
+
+          icon:{ 
+            url : icon_url,
+     
+        
+            },
+
+        });
+
+      closestopMarkers.setMap(this.map);
+
+      
 
 
 }
