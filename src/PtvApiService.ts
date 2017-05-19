@@ -8,20 +8,23 @@
 
 import * as CryptoJS from "crypto-js";
 import { HomePage } from '../pages/home/home';
-
+// Chris Hurley
+// Daniel Ruffolo
 // This data will stay the same accross each url. 
 export default class PtvApi {
     key = "3cbdb7ca-b9db-4fc6-9d47-8b7e1900792a"
     baseUrl = "http://timetableapi.ptv.vic.gov.au";
     version = "v3";
     devId = 3000198;
-
+// Chris Hurley
+// Daniel Ruffolo
     // This function recieves the url string sent by each timetable related page and uses it and the api key
     // defined above to create a encrypted HMACSHA1 all uppercase string.
     getSignature(url: string): string {
         return CryptoJS.HmacSHA1(url, this.key).toString().toUpperCase();
     }
-
+// Chris Hurley
+// Daniel Ruffolo
     // This uses each variable of the url to create the final url string to be passed back.
     //
     getUrl(endpoint: string): string {
@@ -29,26 +32,30 @@ export default class PtvApi {
         let signature = this.getSignature(signedSection);
         return `${this.baseUrl}${signedSection}&signature=${signature}`
     }
-
+// Chris Hurley
+// Daniel Ruffolo
     // This recieves the route url and creates an endpoint which is the section of the url specific to this search.
     // It adds the route type (type) to the endpoint so it knows what to search for.
     getRoutesUrl(type: number): string {
         let endpoint = `routes?route_types=${type}&`;
         return this.getUrl(endpoint);
     }
-
+// Chris Hurley
+// Daniel Ruffolo
     // this function recieved the route number and type and creates a new endpoint for this specific search.
     getStopsUrl(route: number, routeType: number): string {
         let endpoint = `stops/route/${route}/route_type/${routeType}?`;
         return this.getUrl(endpoint);
     }
-
+// Chris Hurley
+// Daniel Ruffolo
     // this function recieved the type and stop id and creates a new endpoint for this specific search.
     getDeparturesUrl(routeType: number, stopId: number) {
         let endpoint = `departures/route_type/${routeType}/stop/${stopId}?`
         return this.getUrl(endpoint);
     }
-
+// Chris Hurley
+// Daniel Ruffolo
     // this function recieved the long and lat from the home view to load all stops around the users current location.
      getNearStopsUrl(lat: number, long: number) {
         let endpoint = `stops/location/${lat},${long}/?max_distance=600&`
@@ -57,7 +64,8 @@ export default class PtvApi {
 }
 
 
-
+// Chris Hurley
+// Daniel Ruffolo
 // This is used to hold each peice of data coming from the route request
 export interface Route {
     route_type: number,
@@ -65,6 +73,8 @@ export interface Route {
     route_name: string,
     route_number: string
 }
+// Chris Hurley
+// Daniel Ruffolo
 // This is used to hold each peice of data coming from the stops request
 export interface Stop {
     stop_name: string,
@@ -73,6 +83,8 @@ export interface Stop {
     stop_latitude: number,
     stop_longitude: number
 }
+// Chris Hurley
+// Daniel Ruffolo
 // This is used to hold each peice of data coming from the departure request
 export interface Departure {
     stop_id: number,

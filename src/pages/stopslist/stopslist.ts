@@ -27,6 +27,7 @@ import { DeparturesList } from '../departuresList/departuresList';
   selector: 'page-stopslist',
   templateUrl: 'stopslist.html'
 })
+// Chris Hurley
 
 export class StopsList {
 
@@ -43,12 +44,14 @@ export class StopsList {
     });
 
   }
+// Chris Hurley
 
   // This sets the url variable to the url sent from the routelist page. It then requests the json data.
   getJsonData() {
     var test = this.navParams.get('url');
     return this.http.get(test).map(res => res.json());
   }
+// Chris Hurley
 
 // This function gets all the routes from the results from json and checks for errors.
   getdata() {
@@ -64,6 +67,7 @@ export class StopsList {
       }
     );
   }
+// Chris Hurley
 
 // When the user selects a stop option it will call this function to get the route_id from the json file linked with the
 // stop_name they selected. It will then pass the data to create the url needed for the next section. It then pushes

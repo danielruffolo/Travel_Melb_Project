@@ -22,6 +22,7 @@ import { StopsList } from '../stopslist/stopslist';
 // https://docs.angularjs.org/api
 // https://developers.google.com/maps/ https://timetableapi.ptv.vic.gov.au/swagger/ui/index
 
+// Chris Hurley
 
 @Component({
   selector: 'page-routelist',
@@ -42,12 +43,14 @@ export class RouteList {
       <ion-spinner ></ion-spinner>`
     });
   }
+// Chris Hurley
 
 // This sets the url variable to the url sent from the timetable page. It then requests the json data.
   getJsonData() {
     var url = this.navParams.get('url');
     return this.http.get(url).map(res => res.json());
   }
+// Chris Hurley
 
 // This function gets all the routes from the results from json and checks for errors.
   getdata() {
@@ -65,6 +68,7 @@ export class RouteList {
       }
     );
   }
+// Chris Hurley
 
 // When the user selects a route option it will call this function to get the route_id from the json file linked with the
 // route_name they selected. It will then pass the data to create the url needed for the next section. It then pushes
