@@ -14,7 +14,7 @@ import { DeparturesList } from '../pages/departuresList/departuresList';
 
 import { FavPlacesPage } from '../pages/favplaces/favplaces';
 
-import { ContentDrawer } from '../components/content-drawer/content-drawer';
+
 
 import { Geolocation } from '@ionic-native/geolocation';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -38,7 +38,7 @@ import { HttpModule } from '@angular/http';
     AutocompletePage,
     FavPlacesPage,
     RouteList,
-    ContentDrawer,
+ 
     StopsList,
     DeparturesList
   ],
@@ -52,7 +52,7 @@ import { HttpModule } from '@angular/http';
     PlannerPage,
     AboutPage,
     AutocompletePage,
-    ContentDrawer,
+
     RouteList,
     StopsList,
     DeparturesList

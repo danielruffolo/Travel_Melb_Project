@@ -8,10 +8,32 @@ import 'rxjs/add/operator/map';
 import { DeparturesList } from '../departuresList/departuresList';
 
 
+// note from Authors-
+// note to marker: https://www.joshmorony.com/category/ionic-tutorials/
+// the following tutorials found on this website aided us in our learning 
+// of ionic mobile app Development.
+// Most of the time however, we modified it to suit our apps contention
+
+// References
+// https://www.joshmorony.com/category/ionic-tutorials
+// https://ionicframework.com/docs/
+// https://www.joshmorony.com/blog/
+// https://ionicframework.com/docs/
+// https://docs.angularjs.org/api
+// https://developers.google.com/maps/ https://timetableapi.ptv.vic.gov.au/swagger/ui/index
+
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
+
+
+
+
+// the home page class serves as the main function class
+// this acts as the apps central screen
 
 export class HomePage {
   @ViewChild('map') mapElement: ElementRef;
@@ -25,6 +47,8 @@ export class HomePage {
   ptvApi = new PvtApi();
   position: Coordinates | null = null;
 
+  //here we are devlaring our global variables
+
   constructor(public menu: MenuController,
     public navCtrl: NavController,
     public geolocation: Geolocation,
@@ -33,7 +57,9 @@ export class HomePage {
     this.address = {
       place: ''
     };
+    //here we are avvessing the ionic native api functions locally from the imported ionic libraries
 
+// this is our menu controller, on click it draws to the given specifications
     menu.enable(true);
 
     this.drawerOptions = {
@@ -46,6 +72,10 @@ export class HomePage {
 
   shouldHide=true;
 
+// this method controls the opening of or dual menus, one for left and one for right
+// each event in the menu opens a new page
+// this is crucial as not having this code breaks the menu controll
+
   openMenu(evt) {
     if (evt === "main") {
       this.menu.enable(true, 'menu1');
@@ -56,6 +86,11 @@ export class HomePage {
     }
     this.menu.toggle();
   }
+
+  // ion view did load method acts as a onload of screen function
+  // here we are building the map from the init map method and we are updating this process with a 
+  // set interval method so that the geolocation is updated throuout use of the app 
+
 
   ionViewDidLoad() {
     this.initMap();
@@ -68,6 +103,9 @@ export class HomePage {
     }, 2 * 60 * 1000);
   }
 
+  // update map calls our geolocation native library object and fetches the coordinates for us to use with google maps
+// the output here is coords for the current position of the app user
+
   updateMap() {
     this.geolocation.getCurrentPosition()
       .then((position) => {
@@ -75,6 +113,10 @@ export class HomePage {
         this.getMarkers(this.position.latitude, this.position.longitude);
       });
   }
+
+  // show adress modal is a method that opens a modal for selecting a particular place with google maps places api suggestions
+  // this enables us to retrieve a geolocation from a text input that google provides from its bibrary
+  // the data is then passed to the start navigating method whhich builds a travel route
 
   showAddressModal() {
     
@@ -88,6 +130,10 @@ export class HomePage {
     this.initMap();
 }
 
+// get markers method utilises our own built PTV api service.
+// we feed the geolocation to the PTV api service which recieves in JSON 
+// marker coordinates which we filter to display specific bus stops within a sertain range of the current position
+
   getMarkers(lat: number, long: number) {
     const url = this.ptvApi.getNearStopsUrl(lat, long);
     this.http.get(url)
@@ -97,6 +143,13 @@ export class HomePage {
         this.addMarkersToMap(this.nearbyStops);
       });
   }
+
+// add markers to map acts as a marker proccessing class. 
+// coords recieved from the PTV API are processed into google maps marker objects 
+// we then bind the markers to their relevent PTV api data information
+// we also filter the markers and give them appropriate icon pictures 
+// either Train - Tram - Bus
+
 
   addMarkersToMap(stops: Stop[]) {
 
@@ -140,6 +193,12 @@ if (type == 0) {
         map: this.map
       });
 
+
+// Here we are turning the markers on our map into clickable listeners. this will allow users to click 
+// a map icon and see relevent informationto that marker
+// this uses our PTV service class and requests data fromt he API specific to the marker location
+// it then pushes the nav controller to the relevent timetable page associated with it
+
       google.maps.event.addListener(stopMarker, 'click', () => {
         this.navCtrl.push(DeparturesList, {
           url: this.ptvApi.getDeparturesUrl(stop.route_type, stop.stop_id)
@@ -149,6 +208,12 @@ if (type == 0) {
 
   }
 
+
+// init map is a method that builds our google maps instance using the MAPS api
+// this is based on the referenced // https://www.joshmorony.com/category/ionic-tutorials tutorial 
+//for google maps
+
+// it takes our geolocation and converts it to a position which we then bind to the maps instance with a marker
   initMap() {
 
     this.geolocation.getCurrentPosition().then((position) => {
@@ -170,6 +235,8 @@ if (type == 0) {
 
   }
 
+  // add marker class takes the golocation and builds a marker using their own marker object 
+
   addMarker(latLng: google.maps.LatLng) {
     let marker = new google.maps.Marker({
       map: this.map,
@@ -181,7 +248,9 @@ if (type == 0) {
     let content = "<h4>You are currently here</h4>";
 
     this.addInfoWindow(marker, content);
+    // we then display information relevent to that marker
   }
+// add info window incorporates a event listner with to build a pop up modal on click of a geolocation marker
 
   addInfoWindow(marker: google.maps.Marker, content) {
 
@@ -194,6 +263,12 @@ if (type == 0) {
     });
 
   }
+
+  // start navigation method accepts or geolocation again and feeds it to the google directions service
+  // it also accepts a google places api golocation and maps a route based on the 2 retrieved geolocations
+  // we then set the map instance and build a directions readout with polyline
+  // referenced tutorial was used here and we modified it to only work with public transport
+
   startNavigating() {
     this.geolocation.getCurrentPosition().then((position) => {
 
@@ -213,7 +288,8 @@ if (type == 0) {
 
         origin: latLng,
         destination: this.address.place,
-
+// thi sis where we tell the google api that we only want transit options\
+// NOTE: We discovered that google has transit from PTV built into it and we found it much more thurough with directions
         travelMode: google.maps.TravelMode['TRANSIT']
       }, (res, status) => {
         this.shouldHide=false;
