@@ -15,7 +15,11 @@ import { AppModule } from './app.module';
 // https://ionicframework.com/docs/
 // https://docs.angularjs.org/api
 // https://developers.google.com/maps/ https://timetableapi.ptv.vic.gov.au/swagger/ui/index
+<<<<<<< HEAD
 //http://devfanaticblog.com/google-places-autocomplete-with-ionic-framework/
+=======
+// http://devfanaticblog.com/tag/ionic-2-google-places/
+>>>>>>> origin/main
 
 
 platformBrowserDynamic().bootstrapModule(AppModule);

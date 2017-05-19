@@ -178,24 +178,24 @@ export class HomePage {
       var title = stop.stop_name;
       var type = stop.route_type;
 
-      var train = "../../assets/img/mini_train.png";
-      var tram = "../../assets/img/mini_tram.png";
-      var bus = "../../assets/img/mini_bus.png";
+      var train = "assets/img/mini_train.png";
+      var tram = "assets/img/mini_tram.png";
+      var bus = "assets/img/mini_bus.png";
       var icon_url;
 
 
       
 if (type == 0) {
-        icon_url = "../../assets/img/mini_train.png";
+        icon_url = "assets/img/mini_train.png";
         console.log("train")
       }
       else if (type == 1) {
-        icon_url = "../../assets/img/mini_tram.png";
+        icon_url = "assets/img/mini_tram.png";
       console.log("tram")
       }
       else if (type == 2) {
         console.log("bus")
-        icon_url = "../../assets/img/mini_bus.png";
+        icon_url = "assets/img/mini_bus.png";
       }
 
       var stopMarker = new google.maps.Marker({
