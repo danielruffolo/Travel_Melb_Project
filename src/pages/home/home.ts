@@ -100,9 +100,9 @@ export class HomePage {
       var title = stop.stop_name;
       var type = stop.route_type;
 
-      var train = "../../assets/img/mini_tram.png";
+      var train = "../../assets/img/mini_train.png";
       var tram = "../../assets/img/mini_tram.png";
-      var bus = "../../assets/img/mini_tram.png";
+      var bus = "../../assets/img/mini_bus.png";
       var icon_url;
 
       // detect icon
@@ -166,7 +166,7 @@ export class HomePage {
 
     });
 
-    let content = "<h4>Information!</h4>";
+    let content = "<h4>You are currently here</h4>";
 
     this.addInfoWindow(marker, content);
   }
