@@ -18,46 +18,18 @@
 
 
 
-     <ion-searchbar
+<ion-searchbar
   (click)="showAddressModal()" 
   [(ngModel)]="address.place"
   type="text"
   [showCancelButton]="shouldShowCancel"
   placeholder="Pick an address">
-
-
-  
 </ion-searchbar>
-<ion-card [hidden]="shouldHide">
+           <ion-card [hidden]="shouldHide">
         <ion-card-content>
             <div #directionsPanel></div>
         </ion-card-content>
     </ion-card>
-
-
- 
-
-
-
-
-
-  <div #map id="map">
-
-  
-
-  </div>
+  <div #map id="map"></div>
 
 </ion-content>
-
-
-
-
-<content-drawer [options]="drawerOptions">
-    
-       <ion-card>
-        <ion-card-content>
-            <div #directionsPanel></div>
-        </ion-card-content>
-    </ion-card>
-    
-</content-drawer>
