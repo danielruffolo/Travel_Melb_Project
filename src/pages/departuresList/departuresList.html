@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Stops</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item text-wrap *ngFor="let departure of departures">
+        <p>Platform:  {{ departure.platform_number}} <br>
+        Direction: <br>
+         Departing:  {{ departure.scheduled_departure_utc | date : 'shortTime' : '+1000' }} {{ departure.platform_id}}</p>
+    </ion-item>
+    
+  </ion-list>
+</ion-content>

@@ -1,0 +1,98 @@
+
+
+<ion-menu [content]="content" side="left" id="menu1">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+
+  </ion-content>
+</ion-menu>
+
+<ion-menu [content]="content" side="right" id="menu2">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Options</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+<!--content of menu view-->
+    <ion-content>
+
+      <ion-card>
+
+
+<div align="middle">
+
+        <ion-card-header><h2>Favourite Places</h2></ion-card-header>
+        <p>Function coming soon!</p>
+
+
+</div>
+    
+
+  <ion-card-content>
+    <!-- Add card content here! -->
+  </ion-card-content>
+
+        
+       
+      </ion-card>
+
+
+
+
+
+<ion-card>
+  
+       <button ion-button full (click)="openHidden()" > Add Favourite place</button>
+       
+</ion-card>
+    <ion-list>
+    <ion-list>
+
+        <ion-card [hidden]="shouldHide">
+
+<ion-item>
+  <ion-label>Search the Place</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+
+  <ion-item>
+  <ion-searchbar
+  (click)="showAddressModal()" 
+  [(ngModel)]="address.place"
+  type="text"
+  [showCancelButton]="shouldShowCancel"
+  placeholder="Pick an address">
+</ion-searchbar>
+
+  </ion-item>
+
+   <ion-item>
+    <ion-label color="primary" stacked>Note:</ion-label>
+    <ion-input type="text" placeholder="what is it"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <div align="middle">
+  <button ion-button round>create</button>
+    <button ion-button round (click)="closeHidden()">close</button>
+    </div>
+
+  </ion-item>
+  </ion-card>
+  </ion-list>
+  </ion-list>
+</ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

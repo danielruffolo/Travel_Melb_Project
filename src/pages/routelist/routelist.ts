@@ -1,0 +1,88 @@
+// This page uses the data sent from the timetable page and recieves all the route data for the selected route type.
+// It then populates the listview with these options and allows the user to select the route they want to look at.
+
+import { Component } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import PvtApi, { Route } from '../../PtvApiService';
+import { StopsList } from '../stopslist/stopslist';
+
+// note from Authors-
+// note to marker: https://www.joshmorony.com/category/ionic-tutorials/
+// the following tutorials found on this website aided us in our learning 
+// of ionic mobile app Development.
+// Most of the time however, we modified it to suit our apps contention
+
+// References
+// https://www.joshmorony.com/category/ionic-tutorials
+// https://ionicframework.com/docs/
+// https://www.joshmorony.com/blog/
+// https://ionicframework.com/docs/
+// https://docs.angularjs.org/api
+// https://developers.google.com/maps/ https://timetableapi.ptv.vic.gov.au/swagger/ui/index
+//http://devfanaticblog.com/google-places-autocomplete-with-ionic-framework/
+
+// Chris Hurley
+
+@Component({
+  selector: 'page-routelist',
+  templateUrl: 'routelist.html'
+})
+
+export class RouteList {
+
+  routes: Route[] | null = null;
+  loading: any;
+  ptvApi = new PvtApi();
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, private http: Http) {
+    this.getJsonData();
+    this.getdata();
+    this.loading = this.loadingCtrl.create({
+      content: `
+      <ion-spinner ></ion-spinner>`
+    });
+  }
+// Chris Hurley
+
+// This sets the url variable to the url sent from the timetable page. It then requests the json data.
+  getJsonData() {
+    var url = this.navParams.get('url');
+    return this.http.get(url).map(res => res.json());
+  }
+// Chris Hurley
+
+// This function gets all the routes from the results from json and checks for errors.
+  getdata() {
+
+    this.getJsonData().subscribe(
+      result => {
+        this.routes = result.routes;
+      },
+      err => {
+        console.error("Error : " + err);
+      },
+      () => {
+        this.loading.dismiss();
+        console.log('getData completed');
+      }
+    );
+  }
+// Chris Hurley
+
+// When the user selects a route option it will call this function to get the route_id from the json file linked with the
+// route_name they selected. It will then pass the data to create the url needed for the next section. It then pushes
+// the url to the next list page.
+  clickedRoute(route: Route) {
+    let stopsUrl = this.ptvApi.getStopsUrl(route.route_id, route.route_type);
+
+    this.navCtrl.push(StopsList, {
+      title: "test",
+      url: stopsUrl
+    });
+  }
+}
+
+
+

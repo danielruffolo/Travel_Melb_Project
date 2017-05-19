@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+        <button ion-button icon-only (click)="openMenu('main')">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-buttons>
+   <ion-searchbar
+  (click)="showAddressModal()" 
+  [(ngModel)]="address.place"
+  type="text"
+  [showCancelButton]="shouldShowCancel"
+  placeholder="Enter a location to start">
+</ion-searchbar>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="openMenu('user')">
+            <ion-icon name="options"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+<!--<ion-searchbar
+  (click)="showAddressModal()" 
+  [(ngModel)]="address.place"
+  type="text"
+  [showCancelButton]="shouldShowCancel"
+  placeholder="Enter a location to start">
+</ion-searchbar>-->
+           <ion-card [hidden]="shouldHide">
+        <ion-card-content>
+            <div #directionsPanel></div>
+        </ion-card-content>
+    </ion-card>
+  <div #map id="map"></div>
+
+</ion-content>
