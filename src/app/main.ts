@@ -15,6 +15,7 @@ import { AppModule } from './app.module';
 // https://ionicframework.com/docs/
 // https://docs.angularjs.org/api
 // https://developers.google.com/maps/ https://timetableapi.ptv.vic.gov.au/swagger/ui/index
+// http://devfanaticblog.com/tag/ionic-2-google-places/
 
 
 platformBrowserDynamic().bootstrapModule(AppModule);
