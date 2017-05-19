@@ -51,7 +51,7 @@ export default class PtvApi {
 
     // this function recieved the long and lat from the home view to load all stops around the users current location.
      getNearStopsUrl(lat: number, long: number) {
-        let endpoint = `stops/location/${lat},${long}/?max_distance=400&`
+        let endpoint = `stops/location/${lat},${long}/?max_distance=600&`
         return this.getUrl(endpoint);
     }
 }
