@@ -28,7 +28,11 @@
 
   
 </ion-searchbar>
-
+<ion-card [hidden]="shouldHide">
+        <ion-card-content>
+            <div #directionsPanel></div>
+        </ion-card-content>
+    </ion-card>
 
 
  

@@ -8,18 +8,11 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-header>
-      Travel Melb Mobile app
-    </ion-card-header>
-    <ion-card-content>
-      <p>information about the app goes here</p>
-    </ion-card-content>
-  </ion-card>
+ 
 
   <ion-list>
     <ion-item text-wrap *ngFor="let route of routes" (click)="clickedRoute(route)">
-        <p> {{route.route_name}}</p>
+        <p>{{route.route_number}} -  {{route.route_name}}</p>
     </ion-item>
   </ion-list>
 

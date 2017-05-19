@@ -13,13 +13,14 @@
 
         
  
-        ion-card {
-            max-height: 100%;
+     on-card {
+            max-height: 30%;
             max-width: 100%;
             overflow: scroll;
             position: absolute;
+            bottom: 0%;
             //z-index will bring element to front of map element , note this
-             z-index: 1;
+             z-index: 1000;
         }
 
           ion-item {
