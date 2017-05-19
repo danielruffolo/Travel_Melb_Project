@@ -64,6 +64,7 @@ export class HomePage {
     setInterval(() => {
       this.initMap();
       this.updateMap();
+      this.startNavigating();
     }, 2 * 60 * 1000);
   }
 

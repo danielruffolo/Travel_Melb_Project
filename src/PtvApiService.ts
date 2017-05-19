@@ -34,7 +34,7 @@ export default class PtvApi {
 
 
      getNearStopsUrl(lat: number, long: number) {
-        let endpoint = `stops/location/${lat},${long}/?max_distance=800&`
+        let endpoint = `stops/location/${lat},${long}/?max_distance=400&`
         return this.getUrl(endpoint);
     }
 }

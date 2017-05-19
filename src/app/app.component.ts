@@ -40,9 +40,8 @@ address;
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'About', component: AboutPage },
       { title: 'Timetable', component: TimetablePage },
-      { title: 'Journey Planner', component: PlannerPage }
+      { title: 'About', component: AboutPage }
 
     ];
 
