@@ -21,6 +21,8 @@ import { DeparturesList } from '../departuresList/departuresList';
 // https://ionicframework.com/docs/
 // https://docs.angularjs.org/api
 // https://developers.google.com/maps/ https://timetableapi.ptv.vic.gov.au/swagger/ui/index
+//http://devfanaticblog.com/google-places-autocomplete-with-ionic-framework/
+//http://devfanaticblog.com/google-places-autocomplete-with-ionic-framework/
 
 
 @Component({
@@ -116,6 +118,9 @@ export class HomePage {
 // the output here is coords for the current position of the app user
 
 // Daniel Ruffolo
+
+
+
   updateMap() {
     this.geolocation.getCurrentPosition()
       .then((position) => {
@@ -129,6 +134,8 @@ export class HomePage {
   // the data is then passed to the start navigating method whhich builds a travel route
 
 // Daniel Ruffolo
+
+/* This idea to show adress as modal is from  http://devfanaticblog.com/google-places-autocomplete-with-ionic-framework/ */ 
   showAddressModal() {
     
     let modal = this.modalCtrl.create(AutocompletePage);
@@ -227,6 +234,8 @@ if (type == 0) {
 // it takes our geolocation and converts it to a position which we then bind to the maps instance with a marker
 
 // Daniel Ruffolo
+/* This idea to show adress as modal is from  https://www.joshmorony.com/ionic-2-how-to-use-google-maps-geolocation-video-tutorial/*/ 
+
   initMap() {
 
     this.geolocation.getCurrentPosition().then((position) => {
@@ -285,7 +294,7 @@ if (type == 0) {
   // it also accepts a google places api golocation and maps a route based on the 2 retrieved geolocations
   // we then set the map instance and build a directions readout with polyline
   // referenced tutorial was used here and we modified it to only work with public transport
-
+/* This idea to show adress as modal is from  https://www.joshmorony.com/implementing-turn-by-turn-navigation-with-google-maps-in-ionic/*/ 
   startNavigating() {
     this.geolocation.getCurrentPosition().then((position) => {
 

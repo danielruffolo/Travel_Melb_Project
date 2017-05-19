@@ -26,6 +26,8 @@ import { HomePage } from './home';
 // autocomplete page acts as a modal class that generates a modal for recieving data from google places API 
 // again this was base doff a tutorial found referenced above
 
+         /* This idea to use autocomplete as a modal is from  http://devfanaticblog.com/google-places-autocomplete-with-ionic-framework/ */ 
+
 export class AutocompletePage {
 
 
@@ -73,7 +75,9 @@ export class AutocompletePage {
         predictions.forEach(function (prediction) {
           autocom.autocompleteItems.push(prediction.description);
 
-          
+ 
+
+/* end zimbaba's idea*/
 
         
         });

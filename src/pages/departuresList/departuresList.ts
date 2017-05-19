@@ -20,6 +20,7 @@ import PvtApi, { Departure } from '../../PtvApiService';
 // https://ionicframework.com/docs/
 // https://docs.angularjs.org/api
 // https://developers.google.com/maps/ https://timetableapi.ptv.vic.gov.au/swagger/ui/index
+//http://devfanaticblog.com/google-places-autocomplete-with-ionic-framework/
 
 
 
