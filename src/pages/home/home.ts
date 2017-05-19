@@ -77,6 +77,7 @@ export class HomePage {
   }
 
   showAddressModal() {
+    
     let modal = this.modalCtrl.create(AutocompletePage);
     modal.onDidDismiss(data => {
       this.address.place = data;
@@ -84,7 +85,8 @@ export class HomePage {
       this.startNavigating()
     });
     modal.present();
-  }
+    this.initMap();
+}
 
   getMarkers(lat: number, long: number) {
     const url = this.ptvApi.getNearStopsUrl(lat, long);
@@ -193,7 +195,6 @@ if (type == 0) {
 
   }
   startNavigating() {
-
     this.geolocation.getCurrentPosition().then((position) => {
 
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -203,6 +204,7 @@ if (type == 0) {
       let directionsDisplay = new google.maps.DirectionsRenderer;
 
       directionsDisplay.setMap(this.map);
+      
       directionsDisplay.setPanel(this.directionsPanel.nativeElement);
 
       directionsService.route({

@@ -5,7 +5,13 @@
             <ion-icon name="menu"></ion-icon>
         </button>
     </ion-buttons>
-    <ion-title>Home</ion-title>
+   <ion-searchbar
+  (click)="showAddressModal()" 
+  [(ngModel)]="address.place"
+  type="text"
+  [showCancelButton]="shouldShowCancel"
+  placeholder="Enter a location to start">
+</ion-searchbar>
     <ion-buttons end>
         <button ion-button icon-only (click)="openMenu('user')">
             <ion-icon name="options"></ion-icon>
@@ -18,13 +24,13 @@
 
 
 
-<ion-searchbar
+<!--<ion-searchbar
   (click)="showAddressModal()" 
   [(ngModel)]="address.place"
   type="text"
   [showCancelButton]="shouldShowCancel"
-  placeholder="Pick an address">
-</ion-searchbar>
+  placeholder="Enter a location to start">
+</ion-searchbar>-->
            <ion-card [hidden]="shouldHide">
         <ion-card-content>
             <div #directionsPanel></div>
