@@ -44,6 +44,8 @@ export class HomePage {
     };
   }
 
+  shouldHide=true;
+
   openMenu(evt) {
     if (evt === "main") {
       this.menu.enable(true, 'menu1');
@@ -211,7 +213,7 @@ if (type == 0) {
 
         travelMode: google.maps.TravelMode['TRANSIT']
       }, (res, status) => {
-
+        this.shouldHide=false;
         if (status == google.maps.DirectionsStatus.OK) {
           directionsDisplay.setDirections(res);
         } else {

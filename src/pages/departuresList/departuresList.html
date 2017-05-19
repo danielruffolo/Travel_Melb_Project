@@ -8,18 +8,12 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-header>
-      Travel Melb Mobile app
-    </ion-card-header>
-    <ion-card-content>
-      <p>information about the app goes here</p>
-    </ion-card-content>
-  </ion-card>
-
   <ion-list>
     <ion-item text-wrap *ngFor="let departure of departures">
-        <p>{{ departure.scheduled_departure_utc | date : 'short' : '+1000' }}</p>
+        <p>Platform:  {{ departure.platform_number}} <br>
+        Direction: <br>
+         Departing:  {{ departure.scheduled_departure_utc | date : 'shortTime' : '+1000' }} {{ departure.platform_id}}</p>
     </ion-item>
+    
   </ion-list>
 </ion-content>

@@ -24690,12 +24690,13 @@ ion-navbar.toolbar {
   height: 100%;
 }
 
-.ios page-home ion-card, .md page-home ion-card {
-  max-height: 100%;
+.ios page-home on-card, .md page-home on-card {
+  max-height: 30%;
   max-width: 100%;
   overflow: scroll;
   position: absolute;
-  z-index: 1;
+  bottom: 0%;
+  z-index: 1000;
 }
 
 .ios page-home ion-item, .md page-home ion-item {
