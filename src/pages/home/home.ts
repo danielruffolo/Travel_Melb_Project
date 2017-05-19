@@ -31,7 +31,7 @@ import { DeparturesList } from '../departuresList/departuresList';
 
 
 
-
+// Daniel Ruffolo
 // the home page class serves as the main function class
 // this acts as the apps central screen
 
@@ -60,6 +60,9 @@ export class HomePage {
     //here we are avvessing the ionic native api functions locally from the imported ionic libraries
 
 // this is our menu controller, on click it draws to the given specifications
+
+
+// Daniel Ruffolo
     menu.enable(true);
 
     this.drawerOptions = {
@@ -76,6 +79,9 @@ export class HomePage {
 // each event in the menu opens a new page
 // this is crucial as not having this code breaks the menu controll
 
+
+
+// Daniel Ruffolo
   openMenu(evt) {
     if (evt === "main") {
       this.menu.enable(true, 'menu1');
@@ -92,10 +98,13 @@ export class HomePage {
   // set interval method so that the geolocation is updated throuout use of the app 
 
 
+// Daniel Ruffolo
   ionViewDidLoad() {
     this.initMap();
     this.updateMap();
 
+
+// Daniel Ruffolo
     setInterval(() => {
       this.initMap();
       this.updateMap();
@@ -106,6 +115,7 @@ export class HomePage {
   // update map calls our geolocation native library object and fetches the coordinates for us to use with google maps
 // the output here is coords for the current position of the app user
 
+// Daniel Ruffolo
   updateMap() {
     this.geolocation.getCurrentPosition()
       .then((position) => {
@@ -118,6 +128,7 @@ export class HomePage {
   // this enables us to retrieve a geolocation from a text input that google provides from its bibrary
   // the data is then passed to the start navigating method whhich builds a travel route
 
+// Daniel Ruffolo
   showAddressModal() {
     
     let modal = this.modalCtrl.create(AutocompletePage);
@@ -130,6 +141,7 @@ export class HomePage {
     this.initMap();
 }
 
+// Daniel Ruffolo
 // get markers method utilises our own built PTV api service.
 // we feed the geolocation to the PTV api service which recieves in JSON 
 // marker coordinates which we filter to display specific bus stops within a sertain range of the current position
@@ -144,6 +156,7 @@ export class HomePage {
       });
   }
 
+// Daniel Ruffolo
 // add markers to map acts as a marker proccessing class. 
 // coords recieved from the PTV API are processed into google maps marker objects 
 // we then bind the markers to their relevent PTV api data information
@@ -163,7 +176,7 @@ export class HomePage {
       var bus = "assets/img/mini_bus.png";
       var icon_url;
 
-      // detect icon
+
       
 if (type == 0) {
         icon_url = "assets/img/mini_train.png";
@@ -182,18 +195,15 @@ if (type == 0) {
         position: position,
         title: title,
         icon: {
-
-          
-
           url: icon_url
-          
-
         },
         clickable: true,
         map: this.map
       });
 
 
+
+// Daniel Ruffolo
 // Here we are turning the markers on our map into clickable listeners. this will allow users to click 
 // a map icon and see relevent informationto that marker
 // this uses our PTV service class and requests data fromt he API specific to the marker location
@@ -208,12 +218,15 @@ if (type == 0) {
 
   }
 
-
+// Chris Hurley
+// Daniel Ruffolo
 // init map is a method that builds our google maps instance using the MAPS api
 // this is based on the referenced // https://www.joshmorony.com/category/ionic-tutorials tutorial 
 //for google maps
 
 // it takes our geolocation and converts it to a position which we then bind to the maps instance with a marker
+
+// Daniel Ruffolo
   initMap() {
 
     this.geolocation.getCurrentPosition().then((position) => {
@@ -237,6 +250,8 @@ if (type == 0) {
 
   // add marker class takes the golocation and builds a marker using their own marker object 
 
+// Daniel Ruffolo
+
   addMarker(latLng: google.maps.LatLng) {
     let marker = new google.maps.Marker({
       map: this.map,
@@ -252,6 +267,7 @@ if (type == 0) {
   }
 // add info window incorporates a event listner with to build a pop up modal on click of a geolocation marker
 
+// Daniel Ruffolo
   addInfoWindow(marker: google.maps.Marker, content) {
 
     let infoWindow = new google.maps.InfoWindow({
@@ -264,6 +280,7 @@ if (type == 0) {
 
   }
 
+// Daniel Ruffolo
   // start navigation method accepts or geolocation again and feeds it to the google directions service
   // it also accepts a google places api golocation and maps a route based on the 2 retrieved geolocations
   // we then set the map instance and build a directions readout with polyline

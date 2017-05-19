@@ -33,6 +33,7 @@ export class TimetablePage {
 
   constructor(public NavParams: NavParams, public navCtrl: NavController) {
   }
+// Chris Hurley
 
   // If the user clicks the train button it will pass the route type to the getRoutesUrl function in PtvApiService. It will then return
   // the data and push it into the route list page.
@@ -44,6 +45,7 @@ export class TimetablePage {
     };
     this.navCtrl.push(RouteList, data);
   }
+// Chris Hurley
 
   // If the user clicks the tram button it will pass the route type to the getRoutesUrl function in PtvApiService. It will then return
   // the data and push it into the route list page.
@@ -56,6 +58,7 @@ export class TimetablePage {
     
     this.navCtrl.push(RouteList, data);
   }
+// Chris Hurley
 
   // If the user clicks the bus button it will pass the route type to the getRoutesUrl function in PtvApiService. It will then return
   // the data and push it into the route list page.
