@@ -106,23 +106,30 @@ export class HomePage {
       var icon_url;
 
       // detect icon
-
-      if (type = 0) {
-        icon_url = train;
+      
+if (type == 0) {
+        icon_url = "../../assets/img/mini_train.png";
+        console.log("train")
       }
-      else if (type = 1) {
-        icon_url = tram;
-
+      else if (type == 1) {
+        icon_url = "../../assets/img/mini_tram.png";
+      console.log("tram")
       }
-      else if (type = 2) {
-        icon_url = bus;
+      else if (type == 2) {
+        console.log("bus")
+        icon_url = "../../assets/img/mini_bus.png";
       }
 
       var stopMarker = new google.maps.Marker({
         position: position,
         title: title,
         icon: {
+
+          
+
           url: icon_url
+          
+
         },
         clickable: true,
         map: this.map
