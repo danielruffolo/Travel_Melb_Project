@@ -1,3 +1,6 @@
+// This recieves the JSON data for departuretimes from the selected stop 
+// and displays it in a list view.
+
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -40,13 +43,14 @@ export class DeparturesList {
 
   }
 
+  // This sets the url variable to the url sent from the routelist page. It then requests the json data.
   getJsonData() {
     var test = this.navParams.get('url');
     return this.http.get(test).map(res => res.json());
   }
 
+// This function gets all the routes from the results from json and checks for errors.
   getdata() {
-    //this.loading.present();
     this.getJsonData().subscribe(
       result => {
         this.departures = result.departures;
